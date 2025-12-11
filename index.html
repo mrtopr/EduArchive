@@ -1,649 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>EduArchive</title>
-    <meta
-      name="description"
-      content="This is Ultimate Study Material Hub For All B. Tech Students"
-    />
+    <meta name="description" content="This is Ultimate Study Material Hub For All B. Tech Students" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-/* Navbar Container */
-.top-nav {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
-}
+        body {
+            font-family: "Inter", sans-serif;
+        }
 
-/* Logo */
-.logo-box {
-    background: #5b61ff;
-    padding: 8px 10px;
-    border-radius: 10px;
-    color: white;
-    font-size: 20px;
-}
+        /* Navbar Container */
+        .top-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
 
-.logo-text {
-    font-size: 22px;
-    font-weight: 600;
-    color: #0f172a;
-}
+        /* Logo */
+        .logo-box {
+            background: #5b61ff;
+            padding: 8px 10px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+        }
 
-/* Search Bar */
-.search-wrapper {
-    flex: 1;
-    max-width: 550px;
-    position: relative;
-}
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0f172a;
+        }
 
-.search-icon {
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%);
-    color: #94a3b8;
-    font-size: 18px;
-}
+        /* Search Bar */
+        .search-wrapper {
+            flex: 1;
+            max-width: 550px;
+            position: relative;
+        }
 
-.search-input {
-    width: 100%;
-    padding: 12px 40px;
-    border-radius: 12px;
-    font-size: 15px;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-    outline: none;
-}
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 18px;
+        }
 
-/* Icons */
-.nav-icon {
-    font-size: 1.3rem;
-    color: #64748b;
-    cursor: pointer;
-}
+        .search-input {
+            width: 100%;
+            padding: 12px 40px;
+            border-radius: 12px;
+            font-size: 15px;
+            border: 1px solid #e2e8f0;
+            background: #f8fafc;
+            outline: none;
+        }
 
-/* Contribute Button */
-.contribute-btn {
-    background: #ecebff;
-    color: #4b47ff;
-    padding: 8px 18px;
-    border-radius: 12px;
-    border: 1px solid #cfcffe;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
+        /* Icons */
+        .nav-icon {
+            font-size: 1.3rem;
+            color: #64748b;
+            cursor: pointer;
+        }
 
-/* User Info */
-.user-info {
-    line-height: 1.1;
-    margin-right: 5px;
-}
+        /* Contribute Button */
+        .contribute-btn {
+            background: #ecebff;
+            color: #4b47ff;
+            padding: 8px 18px;
+            border-radius: 12px;
+            border: 1px solid #cfcffe;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-.user-name {
-    font-weight: 600;
-    color: #0f172a;
-}
+        /* User Info */
+        .user-info {
+            line-height: 1.1;
+            margin-right: 5px;
+        }
 
-.user-role {
-    font-size: 12px;
-    color: #94a3b8;
-}
+        .user-name {
+            font-weight: 600;
+            color: #0f172a;
+        }
 
-/* Profile Picture */
-.nav-dp {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #dbeafe;
-}
+        .user-role {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* Profile Picture */
+        .nav-dp {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #dbeafe;
+        }
 
 
-      /* Hero Section */
-      .hero {
-        background-color: #f0f8ff;
-        text-align: center;
-        padding: 120px 20px;
-      }
+        /* Hero Section */
+        .hero {
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 120px 20px;
+        }
 
-      .hero h1 {
-        font-size: 3rem;
-        font-weight: bold;
-        margin-top: 20px;
-        color: #333;
-      }
-
-      .tag {
-        display: inline-block;
-        background-color: rgb(224 231 255);
-        color: rgb(67 56 202);
-        padding: 10px 20px;
-        border-radius: 25px;
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
-
-      /* Main */
-      .main {
-        text-align: center;
-        padding: 60px 20px;
-      }
-      .year-section {
-        padding: 60px 20px;
-      }
-
-      .year-subtitle {
-        color: #6b7280;
-        font-size: 1rem;
-      }
-
-      /* Card Style */
-      .year-card {
-        background: #ffffff;
-        padding: 30px;
-        border-radius: 20px;
-        border: 1px solid #e7ecf5;
-        text-align: center;
-        transition: 0.25s;
-      }
-
-      .year-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.08);
-      }
-
-      /* Icon Container */
-      .year-icon {
-        width: 60px;
-        height: 60px;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 15px auto;
-        font-size: 1.8rem;
-      }
-
-      /* Pastel Background Icons */
-      .purple-bg {
-        background: #f2efff;
-        color: #9a8df7;
-      }
-
-      .green-bg {
-        background: #e8fff3;
-        color: #c1f1e0;
-      }
-
-      .yellow-bg {
-        background: #fff7e4;
-        color: #ffb400;
-      }
-
-      .red-bg {
-        background: #ffe8ee;
-        color: #ff3d63;
-      }
-
-      /* Text Styling */
-      .year-title {
-        font-weight: 700;
-        margin-bottom: 8px;
-      }
-
-      .year-text {
-        color: #6b7280;
-        font-size: 0.95rem;
-        margin-bottom: 20px;
-      }
-
-      /* Explore Button */
-      .explore-btn {
-        width: 100%;
-        padding: 12px;
-        border-radius: 12px;
-        border: 1px solid #d9dce3;
-        background: white;
-        font-weight: 600;
-        transition: 0.2s;
-      }
-
-      .explore-btn:hover {
-        background: #f0f2f5;
-      }
-
-      /* Footer */
-      .edu-footer {
-        background: #f7f9fc;
-        padding: 60px 80px;
-        border-top: 1px solid #e5e7eb;
-        margin-top: 80px;
-      }
-
-      .footer-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 60px;
-        flex-wrap: wrap;
-      }
-
-      .footer-about {
-        max-width: 400px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-      }
-
-      .brand-icon {
-        background: #5b61ff;
-        padding: 10px;
-        border-radius: 10px;
-        color: white;
-        font-size: 20px;
-        margin-right: 10px;
-      }
-
-      .brand-text {
-        font-size: 22px;
-        font-weight: 600;
-      }
-
-      .footer-about p {
-        color: #6b7280;
-        line-height: 1.6;
-      }
-
-      .footer-links h4,
-      .footer-social h4 {
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-
-      .footer-links a {
-        display: block;
-        margin-bottom: 8px;
-        color: #64748b;
-        text-decoration: none;
-        transition: 0.2s;
-      }
-
-      .footer-links a:hover {
-        color: #1e293b;
-      }
-
-      .social-icons i {
-        font-size: 22px;
-        margin-right: 18px;
-        color: #a0aec0;
-        cursor: pointer;
-        transition: 0.2s;
-      }
-
-      .social-icons i:hover {
-        color: #4a5568;
-      }
-
-      .footer-bottom {
-        margin-top: 20px;
-        text-align: center;
-        color: #94a3b8;
-        font-size: 14px;
-      }
-
-      @media (max-width: 768px) {
         .hero h1 {
-          font-size: 2.2rem;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgb(224 231 255);
+            color: rgb(67 56 202);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Main */
+        .main {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .year-section {
+            padding: 60px 20px;
+        }
+
+        .year-subtitle {
+            color: #6b7280;
+            font-size: 1rem;
+        }
+
+        /* Card Style */
+        .year-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #e7ecf5;
+            text-align: center;
+            transition: 0.25s;
+        }
+
+        .year-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Icon Container */
+        .year-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            font-size: 1.8rem;
+        }
+
+        /* Pastel Background Icons */
+        .purple-bg {
+            background: #f2efff;
+            color: #9a8df7;
+        }
+
+        .green-bg {
+            background: #e8fff3;
+            color: #c1f1e0;
+        }
+
+        .yellow-bg {
+            background: #fff7e4;
+            color: #ffb400;
+        }
+
+        .red-bg {
+            background: #ffe8ee;
+            color: #ff3d63;
+        }
+
+        /* Text Styling */
+        .year-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .year-text {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Explore Button */
+        .explore-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid #d9dce3;
+            background: white;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .explore-btn:hover {
+            background: #f0f2f5;
+        }
+
+        
+
+        .hero button {
+            background-color: #0073ff;
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            margin: 10px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .b2 {
+            background-color: white;
+            color: #0073ff;
+            border: 2px solid #0073ff;
+        }
+
+        .hero button:hover {
+            background-color: #0077ff;
+            color: white;
+        }
+
+        .pathways-row {
+            margin-top: 40px;
+        }
+
+        .path-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+        }
+
+        .path-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.08);
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .purple {
+            background: #edeaff;
+            color: #4b3ded;
+        }
+
+        .green {
+            background: #eafff1;
+            color: #00a86b;
+        }
+
+        .path-card h4 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .path-card p {
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .primary-btn {
+            background: #0a1327;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+        }
+
+        .bg-circle {
+            position: absolute;
+            right: -60px;
+            top: 20px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        .purple-bg {
+            background: #4b3ded;
+        }
+
+        .green-bg {
+            background: #00a86b;
+        }
+
+
+
+
+        /* Footer */
+        .edu-footer {
+            background: #f7f9fc;
+            padding: 60px 80px;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 80px;
         }
 
         .footer-container {
-          flex-direction: column;
-          text-align: center;
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .footer-about {
+            max-width: 400px;
         }
 
         .brand {
-          justify-content: center;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
-        .social-icons {
-          justify-content: center;
+        .brand-icon {
+            background: #5b61ff;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            margin-right: 10px;
         }
-      }
 
-      .hero button {
-        background-color: #0073ff;
-        border: none;
-        color: white;
-        padding: 12px 28px;
-        margin: 10px;
-        border-radius: 25px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-      .hero .b2 {
-        background-color: white;
-        color: #0073ff;
-        border: 2px solid #0073ff;
-      }
-      .hero button:hover {
-        background-color: #0077ff;
-        color: white;
-      }
+        .brand-text {
+            font-size: 22px;
+            font-weight: 600;
+        }
 
-      .pathways-row {
-        margin-top: 40px;
-      }
+        .footer-about p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
 
-      .path-card {
-        background: #ffffff;
-        padding: 40px;
-        border-radius: 20px;
-        border: 1px solid #e2e8f0;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.06);
-        transition: 0.3s;
-      }
+        .footer-links h4,
+        .footer-social h4 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
 
-      .path-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.08);
-      }
+        .footer-links a {
+            display: block;
+            margin-bottom: 8px;
+            color: #64748b;
+            text-decoration: none;
+            transition: 0.2s;
+        }
 
-      .icon-box {
-        width: 55px;
-        height: 55px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 15px;
-      }
+        .footer-links a:hover {
+            color: #1e293b;
+        }
 
-      .purple {
-        background: #edeaff;
-        color: #4b3ded;
-      }
+        .social-icons i {
+            font-size: 22px;
+            margin-right: 18px;
+            color: #a0aec0;
+            cursor: pointer;
+            transition: 0.2s;
+        }
 
-      .green {
-        background: #eafff1;
-        color: #00a86b;
-      }
+        .social-icons i:hover {
+            color: #4a5568;
+        }
 
-      .path-card h4 {
-        font-weight: 700;
-        margin-bottom: 10px;
-      }
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
 
-      .path-card p {
-        color: #6b7280;
-        margin-bottom: 20px;
-      }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
 
-      .primary-btn {
-        background: #0a1327;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 12px;
-      }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
 
-      .bg-circle {
-        position: absolute;
-        right: -60px;
-        top: 20px;
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        opacity: 0.15;
-      }
+            .brand {
+                justify-content: center;
+            }
 
-      .purple-bg {
-        background: #4b3ded;
-      }
-
-      .green-bg {
-        background: #00a86b;
-      }
+            .social-icons {
+                justify-content: center;
+            }
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <nav class="top-nav px-4 py-2 d-flex align-items-center justify-content-between">
-
-    <!-- Left: Logo -->
-    <div class="d-flex align-items-center">
-        <div class="logo-box">
-            <i class="bi bi-book"></i>
-        </div>
-        <span class="logo-text ms-2">EduArchive</span>
-    </div>
-
-    <!-- Middle: Search Bar -->
-    <div class="search-wrapper mx-4">
-        <i class="bi bi-search search-icon"></i>
-        <input type="text" class="search-input" placeholder="Search resources, subjects, teachers..." />
-    </div>
-
-    <!-- Right: Icons + Contribute + User -->
-    <div class="d-flex align-items-center gap-3">
-
-        <i class="bi bi-moon nav-icon"></i>
-        <i class="bi bi-bookmark nav-icon"></i>
-
-        <button class="contribute-btn">
-            <i class="bi bi-plus-lg"></i> Contribute
-        </button>
-
-        <div class="user-info text-end">
-            <div class="user-name">Student</div>
-            <div class="user-role">Student</div>
-        </div>
-
-        <img class="nav-dp"
-            src="https://png.pngtree.com/background/20250320/original/pngtree-cute-anime-boy-chibi-style-large-expressive-eyes-messy-black-hair-picture-image_16284274.jpg"
-            alt="profile">
-    </div>
-
-</nav>
+<body>
 
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="tag">New: 2025 Placement Roadmaps</div>
-      <h1>
-        Your Ultimate B.Tech <br />
-        Learning Hub
-      </h1>
+        <!-- Navbar -->
+        <nav class="top-nav px-4 py-2 d-flex align-items-center justify-content-between">
 
-      <p>
-        EduArchive offers curated academic notes, previous year question papers,
-        placement preparation guides, and video resources tailored for every
-        B.Tech student.
-      </p>
-
-      <button class="b1">Start Learning</button>
-      <button class="b2">Placement Prep</button>
-    </div>
-
-    <div class="year-section">
-      <h2 class="fw-bold text-center">Select Your Academic Year</h2>
-      <p class="text-center year-subtitle">
-        Choose your current year to access personalized resources, notes, and
-        study guides tailored to your syllabus.
-      </p>
-
-      <div class="row justify-content-center g-4 mt-4">
-        <!-- 1st Year -->
-        <div class="col-md-3">
-          <div class="year-card">
-            <div class="year-icon purple-bg">
-              <i class="bi bi-stars"></i>
-            </div>
-            <h4 class="year-title">1st Year</h4>
-            <p class="year-text">
-              Foundations of engineering. Core subjects and introductory
-              concepts.
-            </p>
-            <button class="explore-btn">Explore</button>
-          </div>
-        </div>
-
-        <!-- 2nd Year -->
-        <div class="col-md-3">
-          <div class="year-card">
-            <div class="year-icon green-bg">
-              <i class="bi bi-layers-fill"></i>
-            </div>
-            <h4 class="year-title">2nd Year</h4>
-            <p class="year-text">
-              Deeper dives into core subjects and specialized areas begin.
-            </p>
-            <button class="explore-btn">Explore</button>
-          </div>
-        </div>
-
-        <!-- 3rd Year -->
-        <div class="col-md-3">
-          <div class="year-card">
-            <div class="year-icon yellow-bg">
-              <i class="bi bi-code-slash"></i>
-            </div>
-            <h4 class="year-title">3rd Year</h4>
-            <p class="year-text">
-              Advanced topics, project work, and industry-relevant skills.
-            </p>
-            <button class="explore-btn">Explore</button>
-          </div>
-        </div>
-
-        <!-- 4th Year -->
-        <div class="col-md-3">
-          <div class="year-card">
-            <div class="year-icon red-bg">
-              <i class="bi bi-mortarboard-fill"></i>
-            </div>
-            <h4 class="year-title">4th Year</h4>
-            <p class="year-text">
-              Capstone projects, electives, and intense placement preparation.
-            </p>
-            <button class="explore-btn">Explore</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="main">
-      <h2 class="fw-bold">Pathways to Success</h2>
-      <p>
-        Two distinct modes designed to help you focus on what matters most right
-        now.
-      </p>
-
-      <div class="row justify-content-center g-4 pathways-row">
-        <!-- Card 1 -->
-        <div class="col-md-5">
-          <div class="path-card">
-            <div class="icon-box purple">
-              <i class="bi bi-book fs-3"></i>
+            <!-- Left: Logo -->
+            <div class="d-flex align-items-center">
+                <div class="logo-box">
+                    <i class="bi bi-book"></i>
+                </div>
+                <span class="logo-text ms-2">EduArchive</span>
             </div>
 
-            <h4>Academic Resources</h4>
+            <!-- Middle: Search Bar -->
+            <div class="search-wrapper mx-4">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search resources, subjects, teachers..." />
+            </div>
+
+            <!-- Right: Icons + Contribute + User -->
+            <div class="d-flex align-items-center gap-3">
+
+                <i class="bi bi-moon nav-icon"></i>
+                <i class="bi bi-bookmark nav-icon"></i>
+
+                <button class="contribute-btn">
+                    <i class="bi bi-plus-lg"></i> Contribute
+                </button>
+
+                <div class="user-info text-end">
+                    <div class="user-name">Student</div>
+                    <div class="user-role">Student</div>
+                </div>
+
+                <img class="nav-dp"
+                    src="https://png.pngtree.com/background/20250320/original/pngtree-cute-anime-boy-chibi-style-large-expressive-eyes-messy-black-hair-picture-image_16284274.jpg"
+                    alt="profile">
+            </div>
+
+        </nav>
+
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="tag">New: 2025 Placement Roadmaps</div>
+            <h1>
+                Your Ultimate B.Tech <br />
+                Learning Hub
+            </h1>
+
             <p>
-              Access comprehensive notes, assignments, and Previous Year
-              Questions (PYQs) for all your subjects to ace your university
-              exams.
+                EduArchive offers curated academic notes, previous year question papers,
+                placement preparation guides, and video resources tailored for every
+                B.Tech student.
             </p>
 
-            <button class="btn primary-btn">Explore Subjects</button>
-
-            <div class="bg-circle purple-bg"></div>
-          </div>
+            <button class="b1">Start Learning</button>
+            <a href="placement.html">
+    <button class="b2">Placement Prep</button>
+</a>
         </div>
 
-        <!-- Card 2 -->
-        <div class="col-md-5">
-          <div class="path-card">
-            <div class="icon-box green">
-              <i class="bi bi-briefcase fs-3"></i>
+        <div class="year-section">
+            <h2 class="fw-bold text-center">Select Your Academic Year</h2>
+            <p class="text-center year-subtitle">
+                Choose your current year to access personalized resources, notes, and
+                study guides tailored to your syllabus.
+            </p>
+
+            <div class="row justify-content-center g-4 mt-4">
+                <!-- 1st Year -->
+                <div class="col-md-3">
+                    <div class="year-card">
+                        <div class="year-icon purple-bg">
+                            <i class="bi bi-stars"></i>
+                        </div>
+                        <h4 class="year-title">1st Year</h4>
+                        <p class="year-text">
+                            Foundations of engineering. Core subjects and introductory
+                            concepts.
+                        </p>
+                        <button class="explore-btn">Explore</button>
+                    </div>
+                </div>
+
+                <!-- 2nd Year -->
+                <div class="col-md-3">
+                    <div class="year-card">
+                        <div class="year-icon green-bg">
+                            <i class="bi bi-layers-fill"></i>
+                        </div>
+                        <h4 class="year-title">2nd Year</h4>
+                        <p class="year-text">
+                            Deeper dives into core subjects and specialized areas begin.
+                        </p>
+                        <button class="explore-btn">Explore</button>
+                    </div>
+                </div>
+
+                <!-- 3rd Year -->
+                <div class="col-md-3">
+                    <div class="year-card">
+                        <div class="year-icon yellow-bg">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <h4 class="year-title">3rd Year</h4>
+                        <p class="year-text">
+                            Advanced topics, project work, and industry-relevant skills.
+                        </p>
+                        <button class="explore-btn">Explore</button>
+                    </div>
+                </div>
+
+                <!-- 4th Year -->
+                <div class="col-md-3">
+                    <div class="year-card">
+                        <div class="year-icon red-bg">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+                        <h4 class="year-title">4th Year</h4>
+                        <p class="year-text">
+                            Capstone projects, electives, and intense placement preparation.
+                        </p>
+                        <button class="explore-btn">Explore</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <h2 class="fw-bold">Pathways to Success</h2>
+            <p>
+                Two distinct modes designed to help you focus on what matters most right
+                now.
+            </p>
+
+            <div class="row justify-content-center g-4 pathways-row">
+                <!-- Card 1 -->
+                <div class="col-md-5">
+                    <div class="path-card">
+                        <div class="icon-box purple">
+                            <i class="bi bi-book fs-3"></i>
+                        </div>
+
+                        <h4>Academic Resources</h4>
+                        <p>
+                            Access comprehensive notes, assignments, and Previous Year
+                            Questions (PYQs) for all your subjects to ace your university
+                            exams.
+                        </p>
+
+                        <button class="btn primary-btn">Explore Subjects</button>
+
+                        <div class="bg-circle purple-bg"></div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-5">
+                    <div class="path-card">
+                        <div class="icon-box green">
+                            <i class="bi bi-briefcase fs-3"></i>
+                        </div>
+
+                        <h4>Placement Preparation</h4>
+                        <p>
+                            Master Data Structures, System Design, and Aptitude with curated
+                            roadmaps, LeetCode sheets, and real interview experiences.
+                        </p>
+
+                        <button class="btn primary-btn">Get Job Ready</button>
+
+                        <div class="bg-circle green-bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="edu-footer">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="brand">
+                        <i class="bi bi-book-fill brand-icon"></i>
+                        <span class="brand-text">EduArchive</span>
+                    </div>
+
+                    <p>
+                        EduArchive is the ultimate academic companion for engineering
+                        students. From semester exams to placement interviews, we bridge the
+                        gap between classroom learning and industry requirements with
+                        curated notes, PYQs, and expert lectures.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contribute</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <i class="bi bi-github"></i>
+                        <i class="bi bi-twitter"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+                </div>
             </div>
 
-            <h4>Placement Preparation</h4>
-            <p>
-              Master Data Structures, System Design, and Aptitude with curated
-              roadmaps, LeetCode sheets, and real interview experiences.
-            </p>
+            <hr />
 
-            <button class="btn primary-btn">Get Job Ready</button>
+            <div class="footer-bottom">© 2025 EduArchive. Open Source Education.</div>
+        </footer>
 
-            <div class="bg-circle green-bg"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 
-    <!-- Footer -->
-    <footer class="edu-footer">
-      <div class="footer-container">
-        <div class="footer-about">
-          <div class="brand">
-            <i class="bi bi-book-fill brand-icon"></i>
-            <span class="brand-text">EduArchive</span>
-          </div>
-
-          <p>
-            EduArchive is the ultimate academic companion for engineering
-            students. From semester exams to placement interviews, we bridge the
-            gap between classroom learning and industry requirements with
-            curated notes, PYQs, and expert lectures.
-          </p>
-        </div>
-
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <a href="#">About Us</a>
-          <a href="#">Contribute</a>
-          <a href="#">Privacy Policy</a>
-        </div>
-
-        <div class="footer-social">
-          <h4>Connect</h4>
-          <div class="social-icons">
-            <i class="bi bi-github"></i>
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-linkedin"></i>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="footer-bottom">© 2025 EduArchive. Open Source Education.</div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
 </html>
