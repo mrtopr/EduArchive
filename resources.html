@@ -1,0 +1,2344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curriculum Dashboard</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f7f9fc;
+        padding-top: 20px;
+      }
+
+      /* Navbar Styles */
+      .top-nav {
+        background: #ffffff;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .logo-box {
+        background: #5b61ff;
+        padding: 8px 10px;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+      }
+
+      .logo-text {
+        font-size: 22px;
+        font-weight: 600;
+        color: #0f172a;
+      }
+
+      /* Search Bar */
+      .search-wrapper {
+        flex: 1;
+        max-width: 550px;
+        position: relative;
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        color: #94a3b8;
+        font-size: 18px;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 12px 40px;
+        border-radius: 12px;
+        font-size: 15px;
+        border: 1px solid #e2e8f0;
+        background: #f8fafc;
+        outline: none;
+      }
+
+      /* Icons */
+      .nav-icon {
+        font-size: 1.3rem;
+        color: #64748b;
+        cursor: pointer;
+      }
+
+      /* Contribute Button */
+      .contribute-btn {
+        background: #ecebff;
+        color: #4b47ff;
+        padding: 8px 18px;
+        border-radius: 12px;
+        border: 1px solid #cfcffe;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* User Info */
+      .user-info {
+        line-height: 1.1;
+        margin-right: 5px;
+      }
+
+      .user-name {
+        font-weight: 600;
+        color: #0f172a;
+      }
+
+      .user-role {
+        font-size: 12px;
+        color: #94a3b8;
+      }
+
+      /* Profile Picture */
+      .nav-dp {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #dbeafe;
+      }
+
+      /* Curriculum Container Styles */
+      .curriculum-container {
+        border: 1px solid #dee2e6;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      /* --- Header and Tab Styling --- */
+      .header-wrapper {
+        padding: 20px 20px 10px 20px;
+        border-bottom: 1px solid #e5e7eb; /* Separator for the main header row */
+        margin-bottom: 0 !important;
+      }
+      
+      /* Main Title & Tabs Row */
+      .main-title-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start; /* Align header and tabs at the top */
+          width: 100%;
+      }
+
+      /* Main Tab Controls (Right Side) */
+      .tab-controls {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .tab-controls .nav-pills {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 5px;
+        white-space: nowrap; /* Keep pills from wrapping */
+      }
+
+      .tab-controls .nav-pills .nav-link.active {
+        background-color: #ffffff;
+        color: #212529;
+        font-weight: 600;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .tab-controls .nav-pills .nav-link {
+        color: #6c757d;
+        background-color: transparent;
+        border-radius: 5px;
+      }
+
+      /* --- Content Area Styling --- */
+      .tab-content-area {
+        padding: 0 20px 20px 20px; 
+      }
+
+      .semester-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 15px;
+        border-left: 4px solid #0d6efd; /* Blue vertical line */
+        color: #212529;
+      }
+
+      /* Branch Selector Styling (for Year 2/3/4) */
+      .branch-selector {
+        padding: 20px 0; 
+      }
+
+      .branch-selector .nav-pills {
+        background-color: rgb(232, 234, 236);
+        border-radius: 8px;
+        padding: 5px;
+        display: inline-flex;
+      }
+
+      .branch-selector .nav-link {
+        color: #000000;
+        font-weight: 500;
+        background-color: transparent;
+        padding: 8px 15px;
+      }
+
+      .branch-selector .nav-link.active {
+        background-color: #0d6efd; 
+        color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Card specific styles */
+      .course-card {
+        background-color: #ffffff;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        height: 100%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        padding: 20px;
+      }
+
+      .course-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Course code badge in the card */
+      .course-code {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        padding: 3px 8px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      /* Footer icons */
+      .card-footer-icons .icon-item {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 15px;
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+      .card-footer-icons .icon-item i {
+        margin-right: 5px;
+        color: #0d6efd;
+      }
+
+      /* Footer Styles */
+      .edu-footer {
+        background: #f7f9fc;
+        padding: 60px 80px;
+        border-top: 1px solid #e5e7eb;
+        margin-top: 80px;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="top-nav px-4 py-2 d-flex align-items-center justify-content-between"
+    >
+      <div class="d-flex align-items-center">
+        <div class="logo-box">
+          <i class="bi bi-book"></i>
+        </div>
+        <span class="logo-text ms-2">EduArchive</span>
+      </div>
+
+      <div class="search-wrapper mx-4">
+        <i class="bi bi-search search-icon"></i>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search resources, subjects, teachers..."
+        />
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <i class="bi bi-moon-fill nav-icon"></i>
+        <i class="bi bi-bookmark nav-icon"></i>
+
+        <button class="contribute-btn">
+          <i class="bi bi-plus-lg"></i> Contribute
+        </button>
+
+        <div class="user-info text-end">
+          <div class="user-name">Student</div>
+          <div class="user-role">Student</div>
+        </div>
+
+        <img
+          class="nav-dp"
+          src="https://png.pngtree.com/background/20250320/original/pngtree-cute-anime-boy-chibi-style-large-expressive-eyes-messy-black-hair-picture-image_16284274.jpg"
+          alt="profile"
+        />
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <div class="curriculum-container">
+        
+        <div class="header-wrapper">
+          <div class="main-title-row">
+            
+            <div class="tab-content w-75" id="headerTitles">
+                <div class="tab-pane fade show active" id="year1-header-title" role="tabpanel">
+                     <h1 class="fw-bold">Year 1 Curriculum</h1>
+                     <p class="text-secondary mb-0">Select a subject to view study materials.</p>
+                </div>
+                <div class="tab-pane fade" id="year2-header-title" role="tabpanel">
+                     <h1 class="fw-bold">Year 2 Curriculum</h1>
+                     <p class="text-secondary mb-0">Select a specialization to view study materials.</p>
+                </div>
+                <div class="tab-pane fade" id="year3-header-title" role="tabpanel">
+                     <h1 class="fw-bold">Year 3 Curriculum</h1>
+                     <p class="text-secondary mb-0">Select a specialization to view study materials for **Advanced Studies**.</p>
+                </div>
+                <div class="tab-pane fade" id="year4-header-title" role="tabpanel">
+                     <h1 class="fw-bold">Year 4 Curriculum</h1>
+                     <p class="text-secondary mb-0">Select a specialization to view study materials for **Specialized Topics**.</p>
+                </div>
+             </div>
+
+            <div class="tab-controls">
+              <ul class="nav nav-pills" id="curriculumTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="year1-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#year1-content, #year1-header-title"
+                    type="button"
+                    role="tab"
+                  >
+                    Year 1
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="year2-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#year2-content, #year2-header-title"
+                    type="button"
+                    role="tab"
+                  >
+                    Year 2
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="year3-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#year3-content, #year3-header-title"
+                    type="button"
+                    role="tab"
+                  >
+                    Year 3
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="year4-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#year4-content, #year4-header-title"
+                    type="button"
+                    role="tab"
+                  >
+                    Year 4
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="tab-content tab-content-area" id="curriculumTabsContent">
+          
+          <div
+            class="tab-pane fade show active"
+            id="year1-content"
+            role="tabpanel"
+          >
+            <h3 class="semester-title">Semester 1</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=CY101"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">Engineering Chemistry</h5>
+                    <span class="course-code">CY101</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Explore the fundamentals of chemical thermodynamics,
+                    kinetics, and organic chemistry. Understand molecular
+                    interactions, spectroscopy...
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 23</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 8</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 13</span
+                    >
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=MA101"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">
+                      Math-I: Calculus, ODE & Complex Analysis
+                    </h5>
+                    <span class="course-code">MA101</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Master differential equations, integral calculus, and complex
+                    analysis. This course lays the mathematical foundation
+                    required for analyzing...
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 13</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 4</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 9</span
+                    >
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=EE101"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">
+                      Basic Electrical Technology
+                    </h5>
+                    <span class="course-code">EE101</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Introduction to electrical circuits, Kirchhoff's laws
+                    (KCL/KVL), and network theorems. Learn about transformers, DC
+                    machines, and induction motors.
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 23</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-book"></i> 11</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 19</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=ME101"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">Workshop Practices</h5>
+                    <span class="course-code">ME101</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Hands-on training in carpentry, fitting, welding, and smithy.
+                    Develop practical skills in using workshop tools and safety
+                    procedures...
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 11</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 6</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 19</span
+                    >
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=CS101"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">
+                      Introduction to Programming (C)
+                    </h5>
+                    <span class="course-code">CS101</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    A comprehensive introduction to programming using C. Covers
+                    control structures, loops, arrays, functions, pointers, and
+                    file handling for problem-...
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 8</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 2</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 15</span
+                    >
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=HS101"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">Communication Skill-I</h5>
+                    <span class="course-code">HS101</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Enhance your English grammar, vocabulary, and phonetic
+                    skills. Focuses on developing effective verbal and written
+                    communication strategies for...
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 10</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 2</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 13</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <h3 class="semester-title mt-4">Semester 2</h3>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=PH101"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">Physics</h5>
+                    <span class="course-code">PH101</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Delve into optics, mechanics, electromagnetism, and quantum
+                    physics. Understand the principal principles governing
+                    engineering devices and...
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 18</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 2</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 14</span
+                    >
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=MA202"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">
+                      Math-II: Linear Algebra & Numerical Analysis
+                    </h5>
+                    <span class="course-code">MA202</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Advanced mathematics covering matrices, vector calculus, and
+                    numerical methods. Essential for solving complex linear
+                    systems and computationa...
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 9</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 3</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 7</span
+                    >
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=EC201"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">
+                      Basic Electronics Engineering
+                    </h5>
+                    <span class="course-code">EC201</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Understand the working of PN junction diodes, BJT
+                    transistors, and logic gates. Introduction to operational
+                    amplifiers and electronic circuit design.
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 11</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 3</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 11</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=ME202"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">Engineering Graphics</h5>
+                    <span class="course-code">ME202</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Learn engineering drawing standards, orthographic
+                    projections, isometric views, and CAD software. Essential for
+                    visualizing and communicating desig...
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 23</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 7</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 10</span
+                    >
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=ME203"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">
+                      Basic Mechanical Engineering
+                    </h5>
+                    <span class="course-code">ME203</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Fundamentals of thermodynamics, fluid mechanics, and internal
+                    combustion engines. Overview of power transmission devices and
+                    mechanical...
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 24</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 8</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 14</span
+                    >
+                  </div>
+                </a>
+              </div>
+
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=CS202"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">Data Structure</h5>
+                    <span class="course-code">CS202</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Dive into core data structures including Arrays, Linked Lists,
+                    Stacks, Queues, and Trees. Learn about time complexity and
+                    algorithm efficiency.
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 5</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 4</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 17</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+              <div class="col">
+                <a
+                  href="subject_detail.html?course_id=HS302"
+                  class="course-card text-decoration-none text-dark"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <h5 class="card-title fw-bold">
+                      Communication Skill-II
+                    </h5>
+                    <span class="course-code">HS302</span>
+                  </div>
+                  <p
+                    class="card-text text-secondary mb-3"
+                    style="font-size: 0.9rem"
+                  >
+                    Advanced business communication, technical report writing,
+                    presentation skills, and professional etiquette essential for
+                    career success.
+                  </p>
+                  <div class="card-footer-icons mt-auto pt-2 border-top">
+                    <span class="icon-item"
+                      ><i class="bi bi-file-earmark-text"></i> 12</span
+                    >
+                    <span class="icon-item"><i class="bi bi-book"></i> 5</span
+                    >
+                    <span class="icon-item"
+                      ><i class="bi bi-chat-dots"></i> 10</span
+                    >
+                  </div>
+                </a>
+              </div>
+              <div class="col"></div>
+              <div class="col"></div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="year2-content" role="tabpanel">
+            <div class="branch-selector">
+              <ul class="nav nav-pills" id="branchTabs" role="tablist">
+                <li class="nav-item">
+                  <button
+                    class="nav-link active"
+                    id="cse-branch-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#cse-content"
+                    type="button"
+                    role="tab"
+                  >
+                    CSE
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    id="eee-branch-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#eee-content"
+                    type="button"
+                    role="tab"
+                  >
+                    EEE
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    id="etc-branch-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#etc-content"
+                    type="button"
+                    role="tab"
+                  >
+                    ETC
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    id="ce-branch-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#ce-content"
+                    type="button"
+                    role="tab"
+                  >
+                    CE
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    id="it-branch-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#it-content"
+                    type="button"
+                    role="tab"
+                  >
+                    IT
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="branchContent">
+              <div
+                class="tab-pane fade show active"
+                id="cse-content"
+                role="tabpanel"
+              >
+                <h3 class="semester-title">Semester 3 (CSE)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math-III: Probability and Statistics</h5>
+                                <span class="course-code">MA203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Study probability theory, random variables, and statistical distributions. Learn hypothesis testing and regression analysis for data-driven decision...
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 23</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 2</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 17</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Organizational Behaviour</h5>
+                                <span class="course-code">HS201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Understand individual and group behavior in organizations. Topics include motivation, leadership styles, team dynamics, and conflict resolution.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Communication Skill-III</h5>
+                                <span class="course-code">HS202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Critical reading, advanced writing techniques, and soft skills development. Focus on group discussions and interview preparation.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 20</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 5</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Object Oriented Programming</h5>
+                                <span class="course-code">CS203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Comprehensive study of OOP concepts using C++/Java, including classes, objects, inheritance, polymorphism, and exception handling.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 15</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS302" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Design and Analysis of Algorithm</h5>
+                                <span class="course-code">CS302</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Core principles of algorithm design techniques: greedy algorithms, dynamic programming, divide and conquer, and computational complexity (Big O).
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Microprocessor and Microcontroller</h5>
+                                <span class="course-code">EC201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Architecture and assembly language programming of 8085/8086 microprocessors. Interfacing of peripherals and understanding embedded control.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <h3 class="semester-title">Semester 4 (CSE)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math IV: Discrete Mathematics</h5>
+                                <span class="course-code">MA204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Foundational math for CS: Set theory, logic, relations, graph theory, and combinatorics. Essential for algorithm design and cryptography.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 5</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS205" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Theory of Computation</h5>
+                                <span class="course-code">CS205</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Explore the mathematical models of computation: Finite Automata, Context-Free Grammars, and Turing Machines. Understand computability and...
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 22</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Database Management System</h5>
+                                <span class="course-code">CS204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Learn database design using ER models, relational algebra, and SQL. Covers normalization, transaction management, and concurrency control.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 22</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 6</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS206" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Computer Organization & Architecture</h5>
+                                <span class="course-code">CS206</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Understand the internal structure of computers: CPU design, memory hierarchy, cache organization, pipelining, and instruction sets.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=PE203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">PE-I (Professional Elective I)</h5>
+                                <span class="course-code">PE203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Specialized elective course covering emerging topics in computer science.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 19</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS303" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Principles of Management</h5>
+                                <span class="course-code">HS303</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Introduction to management functions: Planning, Organizing, Staffing, Directing, and Controlling within a business environment.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 21</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+              
+              <div class="tab-pane fade" id="eee-content" role="tabpanel">
+                <h3 class="semester-title">Semester 3 (EEE)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math-III: Probability and Statistics</h5>
+                                <span class="course-code">MA201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Statistical methods and probability theory applied to electrical engineering problems and data analysis.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Communication Skill-III</h5>
+                                <span class="course-code">HS202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Advanced communication strategies, professional correspondence, and effective presentation skills for engineers.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 9</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 16</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Object Oriented Programming</h5>
+                                <span class="course-code">CS201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Introduction to Object Oriented Programming concepts: classes, objects, and inheritance using high-level languages.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 16</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 9</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 6</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EE201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Electrical & Electronics Measurements</h5>
+                                <span class="course-code">EE201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Principles of measurement, errors, analog/digital instruments, bridges, and potentiometers.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 19</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Signals and Systems</h5>
+                                <span class="course-code">EC203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Analysis of continuous and discrete-time signals. Fourier series, Fourier transform, Laplace transform, and Z-transform.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 9</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 19</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Analog Electronics Circuit</h5>
+                                <span class="course-code">EC204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Design and analysis of analog circuits: BJT/FET amplifiers, feedback topologies, oscillators, and power amplifiers.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="semester-title">Semester 4 (EEE)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">UHV-II</h5>
+                                <span class="course-code">HS204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Values and ethics in engineering profession. Understanding human relationship and harmony in existence.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 16</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math IV: Optimization Technique</h5>
+                                <span class="course-code">MA202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Linear programming, simplex method, duality, and transport problems. Introduction to non-linear optimization.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 14</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 2</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EE202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Electromagnetic Fields and Waves</h5>
+                                <span class="course-code">EE202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Vector analysis, electrostatics, magnetostatics, Maxwell's equations, and electromagnetic wave propagation.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 14</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 6</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EE203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Network Theory</h5>
+                                <span class="course-code">EE203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Transient analysis, two-port networks, network synthesis, and graph theory applied to electrical circuits.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EE204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Electrical Machine I</h5>
+                                <span class="course-code">EE204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Principles of DC machines, construction, operation, and speed control. Introduction to AC synchronous machines.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 20</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CV202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Environmental Engineering & Science</h5>
+                                <span class="course-code">CV202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Study of environmental systems, pollution control technologies (air, water, noise), and sustainable engineering practices.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 15</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Digital Electronics Circuits</h5>
+                                <span class="course-code">EC202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Design combinational and sequential logic circuits. Study flip-flops, counters, registers, and A/D & D/A converters.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="etc-content" role="tabpanel">
+                <h3 class="semester-title">Semester 3 (ETC)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math-III: Probability and Stochastic</h5>
+                                <span class="course-code">MA201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Probability spaces, random variables, stochastic processes, and their applications in communication systems.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 5</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CV201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Environmental Engineering & Safety</h5>
+                                <span class="course-code">CV201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Study of environmental pollution, waste management, and industrial safety protocols.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Communication Skill-III</h5>
+                                <span class="course-code">HS202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Developing proficiency in technical writing, public speaking, and corporate communication.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Object Oriented Programming</h5>
+                                <span class="course-code">CS203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                OOP principles: Abstraction, Encapsulation, and Polymorphism using Java or C++.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Organizational Behaviour</h5>
+                                <span class="course-code">HS201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Behavioral dynamics in organizations: Motivation, leadership, team building, and change management.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC205" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Circuit Theory</h5>
+                                <span class="course-code">EC205</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Network theorems, resonance, coupled circuits, and transient response analysis of electrical networks.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Analog Electronics Circuit</h5>
+                                <span class="course-code">EC204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Design and analysis of analog circuits: BJT/FET amplifiers, feedback topologies, oscillators, and power amplifiers.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">UHV-II</h5>
+                                <span class="course-code">HS204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Values and ethics in engineering profession. Understanding human relationship and harmony in existence.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 16</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col"></div>
+                </div>
+
+                <h3 class="semester-title">Semester 4 (ETC)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math IV: Optimization Technique</h5>
+                                <span class="course-code">MA202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Optimization algorithms, linear programming, and numerical methods for engineering problems.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC206" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Digital Communication</h5>
+                                <span class="course-code">EC206</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Pulse modulation, PCM, DPCM, digital modulation techniques (ASK, FSK, PSK), and information theory.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 5</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Microprocessor and Microcontroller</h5>
+                                <span class="course-code">EC201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Architecture, instruction set, and programming of 8085/8086 microprocessors and 8051 microcontrollers.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Signals and Systems</h5>
+                                <span class="course-code">EC203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Signals.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EE202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Electromagnetic Fields and Waves</h5>
+                                <span class="course-code">EE202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Maxwell's equations, boundary conditions, plane waves, and transmission lines.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EE203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Network Theory</h5>
+                                <span class="course-code">EE203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Advanced circuit analysis techniques, network functions, and synthesis.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 17</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="etc-content" role="tabpanel">
+                <h3 class="semester-title">Semester 3 (ETC)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math-III: Probability and Stochastic</h5>
+                                <span class="course-code">MA201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Probability spaces, random variables, stochastic processes, and their applications in communication systems.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 5</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CV201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Environmental Engineering & Safety</h5>
+                                <span class="course-code">CV201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Study of environmental pollution, waste management, and industrial safety protocols.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Communication Skill-III</h5>
+                                <span class="course-code">HS202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Developing proficiency in technical writing, public speaking, and corporate communication.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Object Oriented Programming</h5>
+                                <span class="course-code">CS203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                OOP principles: Abstraction, Encapsulation, and Polymorphism using Java or C++.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Organizational Behaviour</h5>
+                                <span class="course-code">HS201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Behavioral dynamics in organizations: Motivation, leadership, team building, and change management.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC205" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Circuit Theory</h5>
+                                <span class="course-code">EC205</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Network theorems, resonance, coupled circuits, and transient response analysis of electrical networks.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Analog Electronics Circuit</h5>
+                                <span class="course-code">EC204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Design and analysis of analog circuits: BJT/FET amplifiers, feedback topologies, oscillators, and power amplifiers.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">UHV-II</h5>
+                                <span class="course-code">HS204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Values and ethics in engineering profession. Understanding human relationship and harmony in existence.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 16</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col"></div>
+                </div>
+
+                <h3 class="semester-title">Semester 4 (ETC)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math IV: Optimization Technique</h5>
+                                <span class="course-code">MA202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Optimization algorithms, linear programming, and numerical methods for engineering problems.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC206" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Digital Communication</h5>
+                                <span class="course-code">EC206</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Pulse modulation, PCM, DPCM, digital modulation techniques (ASK, FSK, PSK), and information theory.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 5</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Microprocessor and Microcontroller</h5>
+                                <span class="course-code">EC201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Architecture, instruction set, and programming of 8085/8086 microprocessors and 8051 microcontrollers.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Signals and Systems</h5>
+                                <span class="course-code">EC203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Signals.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EE202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Electromagnetic Fields and Waves</h5>
+                                <span class="course-code">EE202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Maxwell's equations, boundary conditions, plane waves, and transmission lines.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EE203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Network Theory</h5>
+                                <span class="course-code">EE203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Advanced circuit analysis techniques, network functions, and synthesis.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 17</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="ce-content" role="tabpanel">
+                <h3 class="semester-title">Semester 3 (CE)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math-III: Probability and Statistics</h5>
+                                <span class="course-code">MA203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Fundamentals of probability, sampling distributions, estimation, and hypothesis testing.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 16</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Communication Skill-III</h5>
+                                <span class="course-code">HS202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Advanced language skills for professional documentation and oral presentations.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Object Oriented Programming</h5>
+                                <span class="course-code">CS201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Programming with objects, classes, inheritance, and polymorphism.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 2</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Digital Electronics Circuits</h5>
+                                <span class="course-code">EC202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Boolean logic, Karnaugh maps, combinational and sequential circuit design.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EC201" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Microprocessor and Microcontroller</h5>
+                                <span class="course-code">EC201</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Microprocessor architecture, assembly language, and interfacing techniques.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 2</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Database Management System</h5>
+                                <span class="course-code">CS204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Relational database concepts, SQL, normalization, and data integrity.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 23</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS204" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">UHV-II</h5>
+                                <span class="course-code">HS204</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Values and ethics in engineering profession. Understanding human relationship and harmony in existence.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 16</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
+
+                <h3 class="semester-title">Semester 4 (CE)</h3>
+                <p>CE specific subjects for Semester 4 go here...</p>
+              </div>
+
+              <div class="tab-pane fade" id="it-content" role="tabpanel">
+                <h3 class="semester-title">Semester 3 (IT)</h3>
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=MA202" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Math IV: Discrete Mathematics</h5>
+                                <span class="course-code">MA202</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Mathematical logic, sets, relations, functions, and graph theory for computer science.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 19</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS205" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Computer Organization & Architecture</h5>
+                                <span class="course-code">CS205</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Functional units of a computer, instruction sets, processor design, and memory systems.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 16</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS302" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Data Structure</h5>
+                                <span class="course-code">CS302</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Advanced data structures: Trees, graphs, heaps, and their applications.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 5</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 10</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=EE203" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Network Theory</h5>
+                                <span class="course-code">EE203</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Circuit analysis, network theorems, and steady-state analysis.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 16</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 11</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=CS206" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Embedded Systems</h5>
+                                <span class="course-code">CS206</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Design of embedded systems, real-time operating systems, and hardware-software co-design.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 16</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="subject_detail.html?course_id=HS303" class="course-card text-decoration-none text-dark">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title fw-bold">Principles of Management</h5>
+                                <span class="course-code">HS303</span>
+                            </div>
+                            <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                Management concepts, planning, organizing, and leadership in technology organizations.
+                            </p>
+                            <div class="card-footer-icons mt-auto pt-2 border-top">
+                                <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 14</span>
+                                <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                <span class="icon-item"><i class="bi bi-chat-dots"></i> 5</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="semester-title">Semester 4 (IT)</h3>
+                <p>IT specific subjects for Semester 4 go here...</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="year3-content" role="tabpanel">
+            <div class="branch-selector">
+              <ul class="nav nav-pills" id="branchTabsYear3" role="tablist">
+                <li class="nav-item">
+                  <button
+                    class="nav-link active"
+                    data-bs-toggle="pill"
+                    data-bs-target="#cse-content-y3"
+                    type="button"
+                    role="tab"
+                  >
+                    CSE
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#eee-content-y3"
+                    type="button"
+                    role="tab"
+                  >
+                    EEE
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#etc-content-y3"
+                    type="button"
+                    role="tab"
+                  >
+                    ETC
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#ce-content-y3"
+                    type="button"
+                    role="tab"
+                  >
+                    CE
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#it-content-y3"
+                    type="button"
+                    role="tab"
+                  >
+                    IT
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="branchContentY3">
+              <div
+                class="tab-pane fade show active"
+                id="cse-content-y3"
+                role="tabpanel"
+              >
+                <h3 class="semester-title">Semester 5 (CSE)</h3>
+                <p>Advanced CSE subjects for Year 3 (e.g., Computer Networks, Theory of Computation) will be displayed here.</p>
+              </div>
+
+              <div class="tab-pane fade" id="eee-content-y3" role="tabpanel">
+                <h3 class="semester-title">Semester 5 (EEE)</h3>
+                <p>Advanced EEE subjects for Year 3 (e.g., Power Systems, Control Systems) will be displayed here.</p>
+              </div>
+              
+              <div class="tab-pane fade" id="etc-content-y3" role="tabpanel">
+                <h3 class="semester-title">Semester 5 (ETC)</h3>
+                <p>Advanced ETC subjects for Year 3 (e.g., Digital Signal Processing, VLSI Design) will be displayed here.</p>
+              </div>
+
+              <div class="tab-pane fade" id="ce-content-y3" role="tabpanel">
+                <h3 class="semester-title">Semester 5 (CE)</h3>
+                <p>Advanced Civil Engineering subjects for Year 3 (e.g., Structural Analysis II, Transportation Engineering) will be displayed here.</p>
+              </div>
+
+              <div class="tab-pane fade" id="it-content-y3" role="tabpanel">
+                <h3 class="semester-title">Semester 5 (IT)</h3>
+                <p>Advanced IT subjects for Year 3 (e.g., Software Engineering, Cloud Computing) will be displayed here.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="year4-content" role="tabpanel">
+            <div class="branch-selector">
+              <ul class="nav nav-pills" id="branchTabsYear4" role="tablist">
+                <li class="nav-item">
+                  <button
+                    class="nav-link active"
+                    data-bs-toggle="pill"
+                    data-bs-target="#cse-content-y4"
+                    type="button"
+                    role="tab"
+                  >
+                    CSE
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#eee-content-y4"
+                    type="button"
+                    role="tab"
+                  >
+                    EEE
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#etc-content-y4"
+                    type="button"
+                    role="tab"
+                  >
+                    ETC
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#ce-content-y4"
+                    type="button"
+                    role="tab"
+                  >
+                    CE
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link"
+                    data-bs-toggle="pill"
+                    data-bs-target="#it-content-y4"
+                    type="button"
+                    role="tab"
+                  >
+                    IT
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="branchContentY4">
+              <div
+                class="tab-pane fade show active"
+                id="cse-content-y4"
+                role="tabpanel"
+              >
+                <h3 class="semester-title">Semester 7 (CSE)</h3>
+                <p>Final Year CSE subjects and electives (e.g., Artificial Intelligence, IoT) will be displayed here.</p>
+              </div>
+
+              <div class="tab-pane fade" id="eee-content-y4" role="tabpanel">
+                <h3 class="semester-title">Semester 7 (EEE)</h3>
+                <p>Final Year EEE subjects and electives (e.g., Renewable Energy Systems, Advanced Control Theory) will be displayed here.</p>
+              </div>
+              
+              <div class="tab-pane fade" id="etc-content-y4" role="tabpanel">
+                <h3 class="semester-title">Semester 7 (ETC)</h3>
+                <p>Final Year ETC subjects and electives (e.g., Wireless Communications, Embedded Systems) will be displayed here.</p>
+              </div>
+
+              <div class="tab-pane fade" id="ce-content-y4" role="tabpanel">
+                <h3 class="semester-title">Semester 7 (CE)</h3>
+                <p>Final Year Civil Engineering subjects and electives (e.g., Advanced Structural Design, Water Resource Planning) will be displayed here.</p>
+              </p>
+              </div>
+
+              <div class="tab-pane fade" id="it-content-y4" role="tabpanel">
+                <h3 class="semester-title">Semester 7 (IT)</h3>
+                <p>Final Year IT subjects and electives (e.g., Cybersecurity, Data Warehousing) will be displayed here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="edu-footer">
+      <div class="footer-container">
+        <div class="footer-about">
+          <div class="brand">
+            <i class="bi bi-book-fill brand-icon"></i>
+            <span class="brand-text">EduArchive</span>
+          </div>
+
+          <p>
+            EduArchive is the ultimate academic companion for engineering
+            students. From semester exams to placement interviews, we bridge the
+            gap between classroom learning and industry requirements with curated
+            notes, PYQs, and expert lectures.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#">About Us</a>
+          <a href="#">Contribute</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <div class="social-icons">
+            <i class="bi bi-github"></i>
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-linkedin"></i>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="footer-bottom">© 2025 EduArchive. Open Source Education.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
