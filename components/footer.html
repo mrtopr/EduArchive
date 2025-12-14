@@ -84,6 +84,24 @@
     font-size: 14px;
   }
 
+  .brand-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none !important;
+  }
+
+
+  .brand-text:hover {
+    color: var(--primary);
+  }
+
+  .brand-text:focus {
+    outline: none;
+  }
+
   @media (max-width: 768px) {
     .edu-footer {
       padding: 40px 20px;
@@ -97,6 +115,8 @@
     .brand {
       justify-content: center;
     }
+
+
   }
 </style>
 
@@ -105,7 +125,7 @@
     <div class="footer-about">
       <div class="brand">
         <i class="bi bi-book-fill brand-icon"></i>
-        <span class="brand-text">EduArchive</span>
+        <a href="index.html" class="brand-text">EduArchive</a>
       </div>
 
       <p>
@@ -126,10 +146,15 @@
     <div class="footer-social">
       <h4>Connect</h4>
       <div class="social-icons">
-        <i class="bi bi-github"></i>
-        <i class="bi bi-twitter"></i>
-        <i class="bi bi-linkedin"></i>
+        <a href="https://github.com/mrtopr" target="_blank" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/isachin-kumar/" target="_blank" aria-label="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
       </div>
+
     </div>
   </div>
 

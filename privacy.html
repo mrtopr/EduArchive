@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | EduArchive</title>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+  <style>
+    .privacy-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .privacy-container h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-heading);
+    }
+
+    .privacy-container p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .privacy-container h2 {
+      font-size: 1.4rem;
+      margin-top: 35px;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .policy-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .last-updated {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <script>
+    fetch("./components/navbar.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("navbar").innerHTML = html);
+  </script>
+
+  <main class="privacy-container">
+    <div class="policy-box">
+      <h1>Privacy Policy</h1>
+      <div class="last-updated">Last updated: December 2025</div>
+
+      <p>
+        At <strong>EduArchive</strong>, we value your privacy and are committed to
+        protecting your personal information. This Privacy Policy explains how
+        we handle data when you use our website.
+      </p>
+
+      <h2>1. Information We Collect</h2>
+      <p>
+        EduArchive does not require users to create accounts or provide personal
+        information to access educational resources.
+      </p>
+      <p>
+        We may collect minimal, non-personal data such as:
+      </p>
+      <ul>
+        <li>Browser type and device information</li>
+        <li>Pages visited and interaction data</li>
+      </ul>
+      <p>
+        This data is used only to improve user experience and website performance.
+      </p>
+
+      <h2>2. Use of Information</h2>
+      <p>
+        Any information collected is used solely to:
+      </p>
+      <ul>
+        <li>Improve content quality and usability</li>
+        <li>Analyze site traffic and performance</li>
+        <li>Maintain and enhance platform features</li>
+      </ul>
+
+      <h2>3. Cookies</h2>
+      <p>
+        EduArchive may use cookies or local storage for basic functionality
+        such as theme preferences (light/dark mode).
+      </p>
+      <p>
+        These cookies do not collect personally identifiable information.
+      </p>
+
+      <h2>4. Third-Party Services</h2>
+      <p>
+        We may link to third-party platforms such as GitHub, LinkedIn, or external
+        educational resources. EduArchive is not responsible for the privacy
+        practices of these external websites.
+      </p>
+
+      <h2>5. Data Security</h2>
+      <p>
+        We follow standard security practices to protect our website.
+        However, no online platform can guarantee absolute security.
+      </p>
+
+      <h2>6. Children’s Privacy</h2>
+      <p>
+        EduArchive is intended for students and learners. We do not knowingly
+        collect personal data from children under the age of 13.
+      </p>
+
+      <h2>7. Changes to This Policy</h2>
+      <p>
+        This Privacy Policy may be updated from time to time. Any changes will
+        be reflected on this page with an updated revision date.
+      </p>
+
+      <h2>8. Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy, you can contact us
+        via our GitHub repository or LinkedIn profiles listed on the website.
+      </p>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch("./components/footer.html")
+      .then(res => res.text())
+      .then(html => document.getElementById("footer").innerHTML = html);
+  </script>
+  <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/theme.js"></script>
+      <script src="./assets/js/layout.js"></script>
+
+</body>
+</html>
