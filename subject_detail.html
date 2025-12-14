@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,303 +13,286 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+        <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-        padding-top: 10px;
-      }
+/* Base */
+body {
+  font-family: "Inter", sans-serif;
+  padding-top: 10px;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
 
-      /* Navbar Container */
-      .top-nav {
-        background: #ffffff;
-        border-bottom: 1px solid #e5e7eb;
-        padding: 8px 15px !important;
-      }
+/* Navbar Container */
+.top-nav {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+  padding: 8px 15px !important;
+}
 
-      /* Logo */
-      .logo-box {
-        background: #5b61ff;
-        padding: 8px 10px;
-        border-radius: 10px;
-        color: white;
-        font-size: 20px;
-      }
+/* Logo */
+.logo-box {
+  background: var(--primary);
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: var(--text-inverse);
+  font-size: 20px;
+}
 
-      .logo-text {
-        font-size: 22px;
-        font-weight: 600;
-        color: #0f172a;
-      }
+.logo-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
 
-      /* Search Bar */
-      .search-wrapper {
-        flex: 1;
-        max-width: 550px;
-        position: relative;
-        display: none;
-      }
+/* Search Bar */
+.search-wrapper {
+  flex: 1;
+  max-width: 550px;
+  position: relative;
+  display: none;
+}
 
-      .search-icon {
-        position: absolute;
-        top: 50%;
-        left: 15px;
-        transform: translateY(-50%);
-        color: #94a3b8;
-        font-size: 18px;
-      }
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 18px;
+}
 
-      .search-input {
-        width: 100%;
-        padding: 12px 40px;
-        border-radius: 12px;
-        font-size: 15px;
-        border: 1px solid #e2e8f0;
-        background: #f8fafc;
-        outline: none;
-      }
+.search-input {
+  width: 100%;
+  padding: 12px 40px;
+  border-radius: 12px;
+  font-size: 15px;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-light);
+  color: var(--text-primary);
+  outline: none;
+}
 
-      /* Show search bar on medium screens and up */
-      @media (min-width: 768px) {
-        .search-wrapper {
-          display: block;
-        }
-      }
+/* Show search bar on medium screens and up */
+@media (min-width: 768px) {
+  .search-wrapper {
+    display: block;
+  }
+}
 
-      /* Icons */
-      .nav-icon {
-        font-size: 1.3rem;
-        color: #64748b;
-        cursor: pointer;
-      }
+/* Icons */
+.nav-icon {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
 
-      /* Contribute Button */
-      .contribute-btn {
-        background: #ecebff;
-        color: #4b47ff;
-        padding: 8px 18px;
-        border-radius: 12px;
-        border: 1px solid #cfcffe;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
+/* Contribute Button */
+.contribute-btn {
+  background: var(--primary-soft);
+  color: var(--primary);
+  padding: 8px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-soft);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
-      /* User Info */
-      .user-info {
-        line-height: 1.1;
-        margin-right: 5px;
-        display: none;
-      }
-      @media (min-width: 576px) {
-        .user-info {
-          display: block;
-        }
-      }
+/* User Info */
+.user-info {
+  line-height: 1.1;
+  margin-right: 5px;
+  display: none;
+}
 
-      .user-name {
-        font-weight: 600;
-        color: #0f172a;
-      }
+@media (min-width: 576px) {
+  .user-info {
+    display: block;
+  }
+}
 
-      .user-role {
-        font-size: 12px;
-        color: #94a3b8;
-      }
+.user-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
 
-      /* Profile Picture */
-      .nav-dp {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #dbeafe;
-      }
+.user-role {
+  font-size: 12px;
+  color: var(--text-muted);
+}
 
-      /* Footer */
-      .edu-footer {
-        background: #f7f9fc;
-        padding: 40px 15px;
-        border-top: 1px solid #e5e7eb;
-        margin-top: 50px;
-      }
+/* Profile Picture */
+.nav-dp {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-soft);
+}
 
-      .footer-container {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-      }
+/* Footer */
+.edu-footer {
+  background: var(--bg-light);
+  padding: 40px 15px;
+  border-top: 1px solid var(--border-light);
+  margin-top: 50px;
+}
 
-      /* Revert to row layout for medium screens and up */
-      @media (min-width: 768px) {
-        .footer-container {
-          flex-direction: row;
-          justify-content: space-between;
-          gap: 60px;
-        }
-      }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 
-      .footer-about {
-        max-width: 400px;
-      }
+/* Revert to row layout for medium screens and up */
+@media (min-width: 768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+  }
+}
 
-      .brand {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-      }
+.footer-about {
+  max-width: 400px;
+}
 
-      .brand-icon {
-        background: #5b61ff;
-        padding: 10px;
-        border-radius: 10px;
-        color: white;
-        font-size: 20px;
-        margin-right: 10px;
-      }
+.brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
 
-      .brand-text {
-        font-size: 22px;
-        font-weight: 600;
-      }
+.brand-icon {
+  background: var(--primary);
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--text-inverse);
+  font-size: 20px;
+  margin-right: 10px;
+}
 
-      .footer-about p {
-        color: #6b7280;
-        line-height: 1.6;
-      }
+.brand-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
 
-      .footer-links h4,
-      .footer-social h4 {
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
+.footer-about p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
 
-      .footer-links a {
-        display: block;
-        margin-bottom: 8px;
-        color: #64748b;
-        text-decoration: none;
-        transition: 0.2s;
-      }
+.footer-links h4,
+.footer-social h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
 
-      .footer-links a:hover {
-        color: #1e293b;
-      }
+.footer-links a {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: 0.2s;
+}
 
-      .social-icons i {
-        font-size: 22px;
-        margin-right: 18px;
-        color: #a0aec0;
-        cursor: pointer;
-        transition: 0.2s;
-      }
+.footer-links a:hover {
+  color: var(--text-primary);
+}
 
-      .social-icons i:hover {
-        color: #4a5568;
-      }
+.social-icons i {
+  font-size: 22px;
+  margin-right: 18px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: 0.2s;
+}
 
-      .footer-bottom {
-        margin-top: 20px;
-        text-align: center;
-        color: #94a3b8;
-        font-size: 14px;
-      }
+.social-icons i:hover {
+  color: var(--text-secondary);
+}
 
-      /* main content styling starts here  */
-      .detail-container {
-        padding: 40px;
-        background-color: #ffffff;
-        min-height: 100vh;
-      }
-      .ai-plan-button {
-        background-color: #e0e7ff; /* Light purple */
-        color: #4f46e5; /* Darker purple text */
-        font-weight: 600;
-        border-radius: 8px;
-        padding: 10px 20px;
-        border: none;
-      }
-      .resource-tabs .nav-link {
-        color: #6b7280;
-        font-weight: 500;
-        margin-right: 20px;
-      }
-      .resource-tabs .nav-link.active {
-        color: #4f46e5;
-        border-bottom: 2px solid #4f46e5;
-        background-color: transparent;
-      }
-      .resource-tabs .nav-link:hover {
-        border-bottom: 2px solid #ccc;
-      }
-      .code-badge {
-        background-color: #f3f4f6;
-        color: #4b5563;
-        padding: 3px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        margin-left: 10px;
-      }
-      /* Custom styles for the PYQ tab */
-      .pyq-control-group {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 10px;
-      }
-      /* Ensure iframes are responsive */
-      .responsive-iframe {
-        width: 100%;
-        height: 400px; /* Reduced height for better flow on smaller screens */
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-      }
-    </style>
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Main Content */
+.detail-container {
+  padding: 40px;
+  background-color: var(--bg-card);
+  min-height: 100vh;
+}
+
+.ai-plan-button {
+  background-color: var(--primary-soft);
+  color: var(--accent-purple);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: none;
+}
+
+.resource-tabs .nav-link {
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+.resource-tabs .nav-link.active {
+  color: var(--accent-purple);
+  border-bottom: 2px solid var(--accent-purple);
+  background-color: transparent;
+}
+
+.resource-tabs .nav-link:hover {
+  border-bottom: 2px solid var(--border-soft);
+}
+
+.code-badge {
+  background-color: var(--bg-muted);
+  color: var(--text-secondary);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
+/* PYQ Controls */
+.pyq-control-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Responsive iframe */
+.responsive-iframe {
+  width: 100%;
+  height: 400px;
+  border: 1px solid var(--border-soft);
+  border-radius: 5px;
+}
+</style>
+
   </head>
   <body>
-    <nav
-      class="top-nav px-4 py-2 d-flex align-items-center justify-content-between"
-    >
-      <div class="d-flex align-items-center">
-        <div class="logo-box">
-          <i class="bi bi-book"></i>
-        </div>
-        <span class="logo-text ms-2 d-none d-sm-inline">EduArchive</span>
-      </div>
-
-      <div class="search-wrapper mx-4 d-none d-md-block">
-        <i class="bi bi-search search-icon"></i>
-        <input
-          type="text"
-          class="search-input"
-          placeholder="Search resources, subjects, teachers..."
-        />
-      </div>
-
-      <div class="d-flex align-items-center gap-2 gap-sm-3">
-        <i class="bi bi-search nav-icon d-md-none"></i>
-
-        <i class="bi bi-moon nav-icon d-none d-sm-block"></i>
-        <i class="bi bi-bookmark nav-icon"></i>
-
-        <button class="contribute-btn d-none d-sm-flex">
-          <i class="bi bi-plus-lg"></i> Contribute
-        </button>
-        <i class="bi bi-plus-lg nav-icon d-sm-none"></i>
-
-        <div class="user-info text-end">
-          <div class="user-name">Student</div>
-          <div class="user-role">Student</div>
-        </div>
-
-        <img
-          class="nav-dp"
-          src="https://png.pngtree.com/background/20250320/original/pngtree-cute-anime-boy-chibi-style-large-expressive-eyes-messy-black-hair-picture-image_16284274.jpg"
-          alt="profile"
-        />
-      </div>
-    </nav>
-
+        <div id="navbar"></div>
+<script>
+  fetch('./components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar').innerHTML = html;
+    
+    });
+</script>
     <div class="container detail-container">
       <p class="text-secondary mb-4">
         <a href="index.html" class="text-decoration-none text-secondary">
@@ -415,692 +397,19 @@
       </div>
     </div>
 
-    <footer class="edu-footer">
-      <div class="container">
-        <div class="footer-container">
-          <div class="footer-about">
-            <div class="brand">
-              <i class="bi bi-book-fill brand-icon"></i>
-              <span class="brand-text">EduArchive</span>
-            </div>
+    <div id="footer"></div>
 
-            <p>
-              EduArchive is the ultimate academic companion for engineering
-              students. From semester exams to placement interviews, we bridge
-              the gap between classroom learning and industry requirements with
-              curated notes, PYQs, and expert lectures.
-            </p>
-          </div>
-
-          <div class="footer-links">
-            <h4>Quick Links</h4>
-            <a href="#">About Us</a>
-            <a href="#">Contribute</a>
-            <a href="#">Privacy Policy</a>
-          </div>
-
-          <div class="footer-social">
-            <h4>Connect</h4>
-            <div class="social-icons">
-              <i class="bi bi-github"></i>
-              <i class="bi bi-twitter"></i>
-              <i class="bi bi-linkedin"></i>
-            </div>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="footer-bottom">
-          © 2025 EduArchive. Open Source Education.
-        </div>
-      </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Function to dynamically generate list items from a comma/dot separated string
-      function formatNotes(notesString) {
-        if (!notesString) return '<p>No detailed module notes available.</p>';
-        
-        const separators = /(M\d+:|Section \d+:|Module \d+:)/g;
-        let parts = notesString.split(separators).filter(p => p.trim() !== '');
-
-        if (parts.length > 1) {
-            let html = '<ul>';
-            for (let i = 0; i < parts.length; i += 2) {
-                const header = parts[i];
-                const content = parts[i + 1] ? parts[i + 1].trim() : '';
-                html += `<li><strong>${header.trim()}</strong> ${content}</li>`;
-            }
-            html += '</ul>';
-            return html;
-        } else {
-            const topics = notesString.split(/[\.|\;]\s*/).filter(t => t.trim() !== '');
-            if (topics.length > 1) {
-                return '<ul>' + topics.map(topic => `<li>${topic.trim()}</li>`).join('') + '</ul>';
-            } else {
-                return `<p>${notesString}</p>`;
-            }
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // --- Start of Consolidated subjectData ---
-        const subjectData = {
-          // --- Year 1 / Semester 1 & 2 (Common) ---
-          'ME101': { name: "Workshop Practices", description: "Hands-on training in carpentry, fitting, and welding.", notes: "Module 1: Carpentry. Module 2: Fitting. Module 3: Welding." },
-          'CS101': { name: "Intro to Programming (C)", description: "C language basics, control structures, arrays, functions, and pointers.", notes: "Module 1: C Language Basics. Module 2: Control Structures & Arrays. Module 3: Pointers and Functions." },
-          'HS101': { name: "Communication Skill-I", description: "English grammar, vocabulary, and effective communication.", notes: "Module 1: Grammar and Vocabulary. Module 2: Verbal Communication. Module 3: Listening Skills." },
-          'PH101': { name: "Physics", description: "Optics, mechanics, electromagnetism, and quantum physics.", notes: "Module 1: Optics and Waves. Module 2: Quantum Mechanics. Module 3: Electromagnetism." },
-          'MA102': { name: "Math-II: Linear Algebra", description: "Matrices, vector calculus, and numerical methods.", notes: "Module 1: Matrices and Determinants. Module 2: Vector Calculus. Module 3: Numerical Methods." },
-          'EC101': { name: "Basic Electronics Engineering", description: "Introduction to Diodes, transistors, logic gates, and operational amplifiers.", notes: "Module 1: Diodes and Transistors. Module 2: Logic Gates. Module 3: Operational Amplifiers." },
-          'ME102': { name: "Engineering Graphics", description: "Drawing standards, projections, isometric views, and CAD basics.", notes: "Module 1: Projections. Module 2: Isometric Views. Module 3: AutoCAD Basics." },
-          'ME103': { name: "Basic Mechanical Engineering", description: "Thermodynamics, fluid mechanics, and combustion engines.", notes: "Module 1: Thermodynamics Laws. Module 2: Fluid Mechanics. Module 3: IC Engines." },
-          'CS102': { name: "Data Structure", description: "Arrays, Linked Lists, Stacks, Queues, and Trees.", notes: "Module 1: Linked Lists & Stacks. Module 2: Trees. Module 3: Hashing and Sorting." },
-          'HS102': { name: "Communication Skill-II", description: "Business communication, technical writing, and professional presentations.", notes: "Module 1: Technical Report Writing. Module 2: Business Correspondence. Module 3: Presentations." },
-          'CH101': { name: "Engineering Chemistry", description: "Fundamentals of chemical thermodynamics, kinetics, and organic chemistry. Molecular interactions, spectroscopy, and properties of materials.", notes: "Section 1: Chemical Thermodynamics. Section 2: Reaction Kinetics. Section 3: Organic Chemistry." },
-          'MA101': { name: "Math-I: Calculus, ODE & Complex Analysis", description: "Differential equations, integral calculus, and complex analysis for system analysis.", notes: "Section 1: Differential Equations. Section 2: Complex Numbers. Section 3: Multi-variable Calculus." },
-      
-          // --- Year 2 / Semester 3 & 4 (Core) ---
-          'MA201': { name: "Math-III: Probability & Statistics", description: "Probability theory, random variables, statistical distributions, estimation, and hypothesis testing.", notes: "M1: Basic Probability. M2: Sampling Distributions. M3: Hypothesis Testing." },
-          'MA201_STOCH': { name: "Math-III: Stochastic Processes", description: "Probability spaces, random variables, stochastic processes.", notes: "M1: Probability Spaces. M2: Random Variables. M3: Stochastic Processes." },
-          'HS201': { name: "Organizational Behaviour", description: "Motivation, leadership, team building, and conflict resolution.", notes: "M1: Motivation Theories. M2: Team Dynamics. M3: Leadership Styles." },
-          'HS202': { name: "Communication Skill-III", description: "Advanced communication strategies, professional correspondence, and presentations.", notes: "M1: Advanced Writing. M2: Group Discussions. M3: Interview Preparation." },
-          'CS201': { name: "Object Oriented Programming", description: "OOP concepts: classes, objects, inheritance, polymorphism in Java/C++.", notes: "M1: Classes and Objects. M2: Polymorphism & Inheritance. M3: Exception Handling." },
-          'CS202': { name: "Design & Analysis of Algorithms", description: "Greedy, Dynamic Programming, Divide & Conquer, Graph Algorithms, and Big-O analysis.", notes: "M1: Big-O Analysis. M2: Graph Algorithms. M3: Dynamic Programming." },
-          'CS203': { name: "Theory of Computation", description: "Finite Automata, Context-Free Grammars, Turing Machines, computability.", notes: "M1: Automata Theory. M2: Context-Free Grammars. M3: Turing Machines." },
-          'CS204': { name: "Database Management System", description: "Relational concepts, SQL, normalization, data integrity.", notes: "M1: Relational Algebra. M2: Normalization. M3: SQL Queries." },
-          'CS205': { name: "Computer Organization & Architecture", description: "Functional units, instruction sets, processor design, and memory.", notes: "M1: CPU Design. M2: Memory Hierarchy. M3: Pipelining." },
-          'EC201': { name: "Microprocessor & Microcontroller", description: "8085/8086 architecture, assembly language, interfacing techniques, and 8051 controller.", notes: "M1: 8085 Architecture. M2: 8051 Programming. M3: Interfacing." },
-          'EC203': { name: "Signals and Systems", description: "Continuous/discrete signals, Fourier series, Laplace and Z-Transform analysis.", notes: "M1: Signal Types. M2: Fourier Transform. M3: Z-Transform." },
-          'EC204': { name: "Analog Electronics Circuit", description: "Transistor biasing, small-signal analysis, BJT/FET amplifiers, feedback, oscillators.", notes: "M1: Transistor Biasing. M2: Amplifiers. M3: Oscillators." },
-          'EC205': { name: "Circuit Theory", description: "Network theorems, resonance, coupled circuits, transient response.", notes: "M1: Network Theorems. M2: Resonance. M3: Coupled Circuits." },
-          'EC206': { name: "Digital Communication", description: "Pulse modulation, PCM, digital modulation, information theory.", notes: "M1: Modulation Techniques. M2: PCM and Quantization. M3: Information Theory." },
-          'EE201': { name: "Electrical & Electronics Measurements", description: "Measurement principles, errors, analog/digital instruments, bridges.", notes: "M1: Measurement Principles. M2: Analog Instruments. M3: Bridges and Transducers." },
-          'EE202': { name: "Electromagnetic Fields & Waves", description: "Vector analysis, Maxwell's equations, wave propagation, transmission lines.", notes: "M1: Maxwell's Equations. M2: Wave Propagation. M3: Transmission Lines." },
-          'EE203': { name: "Network Theory", description: "Transient analysis, two-port networks, synthesis.", notes: "M1: Transient Analysis. M2: Network Theorems. M3: Two-Port Networks." },
-          'EE204': { name: "Electrical Machine I", description: "DC generators, motors, transformers, three-phase systems.", notes: "M1: DC Machines. M2: Transformers. M3: Three-phase Systems." },
-          'EC202': { name: "Digital Electronics Circuits", description: "Boolean logic, Karnaugh maps, combinational and sequential design.", notes: "M1: Logic Gates & Algebra. M2: Combinational Circuits. M3: Sequential Circuits." },
-          'MA202': { name: "Math IV: Discrete Mathematics", description: "Logic, sets, relations, functions, graph theory for CS.", notes: "M1: Set Theory & Logic. M2: Relations and Functions. M3: Graph Theory." },
-          'MA202_OPT': { name: "Math IV: Optimization Techniques", description: "Linear programming, numerical methods for engineering problems.", notes: "M1: Linear Programming. M2: Simplex Method. M3: Numerical Methods." },
-          'CV201': { name: "Environmental Engineering & Safety", description: "Pollution control, waste management, industrial safety protocols.", notes: "M1: Pollution Control. M2: Waste Management. M3: Industrial Safety." },
-      
-          // --- Year 3 / Semester 5 & 6 (Advanced Core) ---
-          'CS301': { name: "Compiler Design", description: "Lexical analysis, parsing, semantic analysis, code generation.", notes: "M1: Lexical Analysis. M2: Parsing Techniques. M3: Code Generation." },
-          'CS302': { name: "Data Comm. & Networks", description: "Data encoding, routing algorithms, network security.", notes: "M1: Encoding and Protocols. M2: Routing Algorithms. M3: Network Security." },
-          'CS303': { name: "Operating System", description: "Process management, memory management, file systems, concurrency.", notes: "M1: Process Management. M2: Memory Management. M3: File Systems." },
-          'CS304': { name: "Computer Vision", description: "Image processing, feature extraction, object detection, pattern recognition.", notes: "M1: Image Processing. M2: Feature Extraction. M3: Object Detection." },
-          'CS305': { name: "Model Checking", description: "Formal verification of software and hardware using model checking tools.", notes: "M1: Formal Verification. M2: Temporal Logic. M3: Model Checking Tools." },
-          'CS306': { name: "Embedded Systems", description: "Microcontroller interfacing, RTOS, hardware-software co-design, embedded C.", notes: "M1: Microcontroller Interfacing. M2: RTOS Concepts. M3: Embedded C Programming." },
-          'CS307': { name: "Advanced Software Engineering", description: "Agile methodologies, software metrics, Quality Assurance (QA).", notes: "M1: Agile and Scrum. M2: Software Metrics. M3: Quality Assurance." },
-          'CS308': { name: "Data Mining", description: "Preprocessing, classification, clustering, association rules.", notes: "M1: Preprocessing & Classification. M2: Clustering & Association. M3: Data Warehousing." },
-          'CS309': { name: "Artificial Intelligence", description: "Search algorithms, knowledge representation, ML basics.", notes: "M1: Search Algorithms. M2: Knowledge Representation. M3: Machine Learning Basics." },
-          'CS310': { name: "Cloud Computing", description: "Cloud models, virtualization, cloud security.", notes: "M1: Cloud Models (IaaS, PaaS, SaaS). M2: Virtualization. M3: Cloud Security." },
-          'CS311': { name: "Information Security", description: "Cryptography, network security, secure coding.", notes: "M1: Cryptography. M2: Network Security. M3: Secure Coding." },
-          'IT301': { name: "Web Services & Distributed Systems", description: "SOA, SOAP, RESTful services, distributed computing.", notes: "M1: SOA and SOAP. M2: RESTful Services. M3: Distributed Computing Models." },
-          'HS303': { name: "Principles of Management", description: "Planning, Organizing, Staffing, Directing, Controlling in business.", notes: "M1: Management Functions. M2: Planning and Organizing. M3: Direction and Control." },
-          'EC301': { name: "Microwave Engineering", description: "Microwave tubes, waveguides, components, measurements.", notes: "M1: Microwave Tubes. M2: Waveguides. M3: Components and Measurements." },
-          'EC302': { name: "Digital Signal Processing", description: "DFT, FFT, filter design, DSP processor architecture.", notes: "M1: DFT and FFT. M2: Filter Design. M3: DSP Processors." },
-          'EC303': { name: "Communication Theory", description: "Analog/digital communication, noise analysis, modulation.", notes: "M1: Modulation Techniques. M2: Noise Analysis. M3: Digital Communication." },
-          'EC304': { name: "Antenna Theory", description: "Antenna parameters, arrays, radio wave propagation.", notes: "M1: Antenna Parameters. M2: Antenna Arrays. M3: Radio Wave Propagation." },
-          'EC305': { name: "Mobile Communication", description: "Cellular concepts, GSM, CDMA, wireless standards.", notes: "M1: Cellular Concepts. M2: GSM and CDMA. M3: Wireless Standards." },
-          'EC306': { name: "VLSI Design", description: "MOSFETs, CMOS logic, layout design, VHDL/Verilog.", notes: "M1: MOSFET Fundamentals. M2: CMOS Logic. M3: VHDL/Verilog." },
-          'EE301': { name: "Control Systems", description: "Mathematical modeling, time/frequency domain analysis, stability.", notes: "M1: System Modeling. M2: Time Domain Analysis. M3: Stability Criteria." },
-          'EE302': { name: "Electrical Machines-II", description: "Synchronous machines, induction motors, special electrical machines.", notes: "M1: Synchronous Machines. M2: Induction Motors. M3: Special Machines." },
-          'EE303': { name: "Power Transmission & Distribution", description: "Transmission line parameters, performance analysis, distribution systems.", notes: "M1: Transmission Line Parameters. M2: Performance Analysis. M3: Distribution Systems." },
-          'EE304': { name: "Power Electronics", description: "Power devices, converters, inverters, drive control.", notes: "M1: Power Devices. M2: Converters and Inverters. M3: Drive Control." },
-          'EE305': { name: "Power System Protection", description: "Relays, circuit breakers, protection schemes.", notes: "M1: Relays and CBs. M2: Protection Schemes. M3: System Grounding." },
-          'HS301_EEE': { name: "Organizational Behaviour (EEE)", description: "Human behavior in organizational settings, focusing on motivation and team building.", notes: "M1: Human Factors. M2: Team Building. M3: Conflict Management." },
-          'OE302_OPT': { name: "Optimization Engineering", description: "Mathematical optimization for engineering design and decisions.", notes: "M1: Linear Programming. M2: Nonlinear Optimization. M3: Application in Design." },
-      
-          // --- Year 4 / Semester 7 & 8 (Advanced & Final) ---
-          'CS401': { name: "Software Engineering", description: "Advanced SDLC models, project management, maintenance.", notes: "M1: SDLC Models. M2: Project Management. M3: Software Maintenance." },
-          'CS402': { name: "Machine Learning", description: "Supervised/unsupervised learning, neural networks, deep learning.", notes: "M1: Supervised Learning. M2: Unsupervised Learning. M3: Neural Networks." },
-          'IT401': { name: "Blockchain Technology", description: "Cryptocurrencies, smart contracts, and decentralized applications.", notes: "M1: Cryptocurrencies. M2: Smart Contracts. M3: Decentralized Applications." },
-          'HS401': { name: "Technical Writing", description: "Research papers, technical reports, documentation standards.", notes: "M1: Research Paper Structure. M2: Technical Report Layout. M3: Documentation Standards." },
-          'HS402': { name: "Principle of Management", description: "Management principles for engineering professionals.", notes: "M1: Management Principles. M2: Leadership. M3: Decision Making." },
-          'CS403': { name: "Real-Time Systems", description: "Real-time scheduling, reliability, fault tolerance.", notes: "M1: Real-Time Scheduling. M2: Reliability and Redundancy. M3: Fault Tolerance." },
-          'EC401': { name: "Optical Communication", description: "Optical fibers, sources, detectors, network architecture.", notes: "M1: Optical Fibers. M2: Sources and Detectors. M3: Network Architecture." },
-          'EE401': { name: "Power Systems Operation & Control", description: "Load flow analysis, AGC, power system stability.", notes: "M1: Load Flow. M2: Automatic Generation Control (AGC). M3: Power System Stability." },
-          'EE404': { name: "Power Systems Operation & Control", description: "Load flow analysis, AGC, power system stability.", notes: "M1: Load Flow. M2: Automatic Generation Control (AGC). M3: Power System Stability." },
-          
-          // --- Final Projects / Internship ---
-          'PR401': { name: "Research Project / Internship", description: "Final year major project or industrial internship.", notes: "Focus on project planning, execution, and reporting." },
-      
-          // --- ELECTIVES (Unified Definitions) ---
-          'PE201': { name: "PE-I: Professional Elective", description: "Specialized elective in the student's primary domain (Level 2).", notes: "Content varies based on chosen specialization." },
-          'PE301': { name: "PE-I: Professional Elective", description: "Specialized elective in the student's primary domain (Level 3).", notes: "Content varies based on chosen specialization." },
-          'PE302': { name: "PE-II: Professional Elective", description: "Advanced elective in specialized domain (Level 3).", notes: "Content varies based on chosen specialization." },
-          'PE303': { name: "PE-III: Professional Elective", description: "Advanced elective tailored to career interests (Level 3).", notes: "Content varies based on chosen specialization." },
-          'PE304': { name: "PE-IV: Professional Elective", description: "Advanced elective for specialized knowledge (Level 3).", notes: "Content varies based on chosen specialization." },
-          'PE401': { name: "PE-V: Professional Elective", description: "Specialized elective in advanced technologies (Level 4).", notes: "Content varies based on chosen specialization." },
-          'PE402': { name: "PE-VI/PE-VII: Professional Elective", description: "Advanced elective in emerging technologies (Level 4).", notes: "Content varies based on chosen specialization." },
-          'OE301': { name: "OE-I: Open Elective", description: "Interdisciplinary elective from other domains (Level 3).", notes: "Content varies based on chosen external discipline." },
-          'OE302': { name: "OE-II: Open Elective", description: "General elective from various disciplines (Level 3).", notes: "Content varies based on chosen external discipline." },
-          'OE303': { name: "OE-III: Open Elective", description: "General elective choice (Level 3).", notes: "Content varies based on chosen external discipline." },
-          'OE401': { name: "OE-IV: Open Elective", description: "Open elective from any engineering domain (Level 4).", notes: "Content varies based on chosen external discipline." },
-          'OE402': { name: "OE-V: Open Elective", description: "Open elective choice (Level 4).", notes: "Content varies based on chosen external discipline." },
-        };
-        // --- End of Consolidated subjectData ---
-
-        async function fetchSubjectDetails(courseId) {
-          await new Promise((resolve) => setTimeout(resolve, 50)); // Reduced delay
-          if (subjectData[courseId]) {
-            return { data: subjectData[courseId], courseId: courseId };
-          }
-          return null;
-        }
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const courseId = urlParams.get("course_id");
-        
-        // Find all elements to update
-        const elPageTitle = document.getElementById("pageTitle");
-        const elSubjectName = document.getElementById("subjectName");
-        const elSubjectCode = document.getElementById("subjectCode");
-        const elSubjectDescription = document.getElementById("subjectDescription");
-        const elNotesContent = document.getElementById("notesContent");
-
-        async function loadSubject() {
-          if (!courseId) {
-            elSubjectName.textContent = "Invalid Request";
-            elSubjectDescription.textContent =
-              "Please specify a valid course ID in the URL. Example: ?course_id=CS302";
-            elSubjectCode.textContent = "ERR";
-            elNotesContent.innerHTML = "<p>No course ID provided.</p>";
-            return;
-          }
-
-          try {
-            const result = await fetchSubjectDetails(courseId);
-
-            if (result && result.data) {
-              elPageTitle.textContent = `${result.data.name} | EduArchive`;
-              elSubjectName.textContent = result.data.name;
-              elSubjectCode.textContent = result.courseId;
-              elSubjectDescription.textContent = result.data.description;
-              elNotesContent.textContent = result.data.notes;
-            } else {
-              elPageTitle.textContent = "Subject Not Found | EduArchive";
-              elSubjectName.textContent = "Subject Not Found";
-              elSubjectCode.textContent = courseId;
-              elSubjectDescription.textContent =
-                "The requested subject could not be found. Please check the URL.";
-              elNotesContent.textContent = "No notes available.";
-            }
-          } catch (error) {
-            console.error("Error fetching subject data:", error);
-            elSubjectName.textContent = "Load Error";
-            elSubjectDescription.textContent =
-              "An error occurred while loading the data.";
-          }
-        }
-
-        loadSubject();
-      });
+        fetch('./components/footer.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
     </script>
-  </body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="pageTitle">Curriculum Details</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-        padding-top: 10px;
-      }
-
-      /* Navbar Container */
-      .top-nav {
-        background: #ffffff;
-        border-bottom: 1px solid #e5e7eb;
-        padding: 8px 15px !important;
-      }
-
-      /* Logo */
-      .logo-box {
-        background: #5b61ff;
-        padding: 8px 10px;
-        border-radius: 10px;
-        color: white;
-        font-size: 20px;
-      }
-
-      .logo-text {
-        font-size: 22px;
-        font-weight: 600;
-        color: #0f172a;
-      }
-
-      /* Search Bar */
-      .search-wrapper {
-        flex: 1;
-        max-width: 550px;
-        position: relative;
-        display: none;
-      }
-
-      .search-icon {
-        position: absolute;
-        top: 50%;
-        left: 15px;
-        transform: translateY(-50%);
-        color: #94a3b8;
-        font-size: 18px;
-      }
-
-      .search-input {
-        width: 100%;
-        padding: 12px 40px;
-        border-radius: 12px;
-        font-size: 15px;
-        border: 1px solid #e2e8f0;
-        background: #f8fafc;
-        outline: none;
-      }
-
-      /* Show search bar on medium screens and up */
-      @media (min-width: 768px) {
-        .search-wrapper {
-          display: block;
-        }
-      }
-
-      /* Icons */
-      .nav-icon {
-        font-size: 1.3rem;
-        color: #64748b;
-        cursor: pointer;
-      }
-
-      /* Contribute Button */
-      .contribute-btn {
-        background: #ecebff;
-        color: #4b47ff;
-        padding: 8px 18px;
-        border-radius: 12px;
-        border: 1px solid #cfcffe;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      /* User Info */
-      .user-info {
-        line-height: 1.1;
-        margin-right: 5px;
-        display: none;
-      }
-      @media (min-width: 576px) {
-        .user-info {
-          display: block;
-        }
-      }
-
-      .user-name {
-        font-weight: 600;
-        color: #0f172a;
-      }
-
-      .user-role {
-        font-size: 12px;
-        color: #94a3b8;
-      }
-
-      /* Profile Picture */
-      .nav-dp {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #dbeafe;
-      }
-
-      /* Footer */
-      .edu-footer {
-        background: #f7f9fc;
-        padding: 40px 15px;
-        border-top: 1px solid #e5e7eb;
-        margin-top: 50px;
-      }
-
-      .footer-container {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-      }
-
-      /* Revert to row layout for medium screens and up */
-      @media (min-width: 768px) {
-        .footer-container {
-          flex-direction: row;
-          justify-content: space-between;
-          gap: 60px;
-        }
-      }
-
-      .footer-about {
-        max-width: 400px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-      }
-
-      .brand-icon {
-        background: #5b61ff;
-        padding: 10px;
-        border-radius: 10px;
-        color: white;
-        font-size: 20px;
-        margin-right: 10px;
-      }
-
-      .brand-text {
-        font-size: 22px;
-        font-weight: 600;
-      }
-
-      .footer-about p {
-        color: #6b7280;
-        line-height: 1.6;
-      }
-
-      .footer-links h4,
-      .footer-social h4 {
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-
-      .footer-links a {
-        display: block;
-        margin-bottom: 8px;
-        color: #64748b;
-        text-decoration: none;
-        transition: 0.2s;
-      }
-
-      .footer-links a:hover {
-        color: #1e293b;
-      }
-
-      .social-icons i {
-        font-size: 22px;
-        margin-right: 18px;
-        color: #a0aec0;
-        cursor: pointer;
-        transition: 0.2s;
-      }
-
-      .social-icons i:hover {
-        color: #4a5568;
-      }
-
-      .footer-bottom {
-        margin-top: 20px;
-        text-align: center;
-        color: #94a3b8;
-        font-size: 14px;
-      }
-
-      /* main content styling starts here  */
-      .detail-container {
-        padding: 40px;
-        background-color: #ffffff;
-        min-height: 100vh;
-      }
-      .ai-plan-button {
-        background-color: #e0e7ff; /* Light purple */
-        color: #4f46e5; /* Darker purple text */
-        font-weight: 600;
-        border-radius: 8px;
-        padding: 10px 20px;
-        border: none;
-      }
-      .resource-tabs .nav-link {
-        color: #6b7280;
-        font-weight: 500;
-        margin-right: 20px;
-      }
-      .resource-tabs .nav-link.active {
-        color: #4f46e5;
-        border-bottom: 2px solid #4f46e5;
-        background-color: transparent;
-      }
-      .resource-tabs .nav-link:hover {
-        border-bottom: 2px solid #ccc;
-      }
-      .code-badge {
-        background-color: #f3f4f6;
-        color: #4b5563;
-        padding: 3px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        margin-left: 10px;
-      }
-      /* Custom styles for the PYQ tab */
-      .pyq-control-group {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 10px;
-      }
-      /* Ensure iframes are responsive */
-      .responsive-iframe {
-        width: 100%;
-        height: 400px; /* Reduced height for better flow on smaller screens */
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-      }
-    </style>
-  </head>
-  <body>
-    <nav
-      class="top-nav px-4 py-2 d-flex align-items-center justify-content-between"
-    >
-      <div class="d-flex align-items-center">
-        <div class="logo-box">
-          <i class="bi bi-book"></i>
-        </div>
-        <span class="logo-text ms-2 d-none d-sm-inline">EduArchive</span>
-      </div>
-
-      <div class="search-wrapper mx-4 d-none d-md-block">
-        <i class="bi bi-search search-icon"></i>
-        <input
-          type="text"
-          class="search-input"
-          placeholder="Search resources, subjects, teachers..."
-        />
-      </div>
-
-      <div class="d-flex align-items-center gap-2 gap-sm-3">
-        <i class="bi bi-search nav-icon d-md-none"></i>
-
-        <i class="bi bi-moon nav-icon d-none d-sm-block"></i>
-        <i class="bi bi-bookmark nav-icon"></i>
-
-        <button class="contribute-btn d-none d-sm-flex">
-          <i class="bi bi-plus-lg"></i> Contribute
-        </button>
-        <i class="bi bi-plus-lg nav-icon d-sm-none"></i>
-
-        <div class="user-info text-end">
-          <div class="user-name">Student</div>
-          <div class="user-role">Student</div>
-        </div>
-
-        <img
-          class="nav-dp"
-          src="https://png.pngtree.com/background/20250320/original/pngtree-cute-anime-boy-chibi-style-large-expressive-eyes-messy-black-hair-picture-image_16284274.jpg"
-          alt="profile"
-        />
-      </div>
-    </nav>
-
-    <div class="container detail-container">
-      <p class="text-secondary mb-4">
-        <a href="index.html" class="text-decoration-none text-secondary">
-          <i class="bi bi-arrow-left"></i> Back to Dashboard
-        </a>
-      </p>
-
-      <div class="d-flex justify-content-between align-items-start mb-4">
-        <div>
-          <h1 class="fw-bold d-inline-block" id="subjectName">
-            Loading Subject...
-          </h1>
-          <span class="code-badge" id="subjectCode">CODE</span>
-        </div>
-      </div>
-
-      <p class="lead text-muted mb-4" id="subjectDescription">
-        Loading description...
-      </p>
-
-      <ul class="nav resource-tabs mb-4 border-bottom" role="tablist">
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            data-bs-toggle="tab"
-            href="#notes"
-            role="tab"
-            ><i class="bi bi-journal-text me-2"></i> Notes</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#pyq" role="tab"
-            ><i class="bi bi-file-text me-2"></i> PYQ Papers</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" href="#videos" role="tab"
-            ><i class="bi bi-camera-video me-2"></i> Video Lectures</a
-          >
-        </li>
-      </ul>
-
-      <div class="tab-content">
-        <div class="tab-pane fade show active" id="notes" role="tabpanel">
-          <h4 class="mb-3">Detailed Notes</h4>
-          <div id="notesContent" class="text-muted">Loading notes...</div>
-          <button type="button" class="btn btn-outline-info">
-            Add data form here
-          </button>
-        </div>
-
-        <div class="tab-pane fade" id="pyq" role="tabpanel">
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <h5 class="mb-3">Mid-Semester Papers</h5>
-              <div class="pyq-control-group">
-                <button type="button" class="btn btn-outline-info">
-                  Mid-Semester papers
-                </button>
-                <button
-                  onclick="window.open('https://drive.google.com/file/d/1bmf_1GVXT_ehKGUUIog4Jm8YjvO2U5FB/preview', '_blank')"
-                  class="btn btn-success"
-                >
-                  <i class="bi bi-box-arrow-up-right"></i> Pop-out View
-                </button>
-              </div>
-              <iframe
-                src="https://drive.google.com/file/d/1bmf_1GVXT_ehKGUUIog4Jm8YjvO2U5FB/preview"
-                class="responsive-iframe"
-                allow="fullscreen"
-              ></iframe>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <h5 class="mb-3">End-Semester Papers</h5>
-              <div class="pyq-control-group">
-                <button type="button" class="btn btn-outline-info">
-                   End-Semester papers
-                </button>
-                <button
-                  onclick="window.open('https://drive.google.com/file/d/1bmf_1GVXT_ehKGUUIog4Jm8YjvO2U5FB/preview', '_blank')"
-                  class="btn btn-success"
-                >
-                  <i class="bi bi-box-arrow-up-right"></i> Pop-out View
-                </button>
-              </div>
-              <iframe
-                src="https://drive.google.com/file/d/1bmf_1GVXT_ehKGUUIog4Jm8YjvO2U5FB/preview"
-                class="responsive-iframe"
-                allow="fullscreen"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div class="tab-pane fade" id="videos" role="tabpanel">
-          <p class="text-muted">Embedded video lectures or links go here for the current subject.</p>
-          <button type="button" class="btn btn-outline-info">
-            Add data form here
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <footer class="edu-footer">
-      <div class="container">
-        <div class="footer-container">
-          <div class="footer-about">
-            <div class="brand">
-              <i class="bi bi-book-fill brand-icon"></i>
-              <span class="brand-text">EduArchive</span>
-            </div>
-
-            <p>
-              EduArchive is the ultimate academic companion for engineering
-              students. From semester exams to placement interviews, we bridge
-              the gap between classroom learning and industry requirements with
-              curated notes, PYQs, and expert lectures.
-            </p>
-          </div>
-
-          <div class="footer-links">
-            <h4>Quick Links</h4>
-            <a href="#">About Us</a>
-            <a href="#">Contribute</a>
-            <a href="#">Privacy Policy</a>
-          </div>
-
-          <div class="footer-social">
-            <h4>Connect</h4>
-            <div class="social-icons">
-              <i class="bi bi-github"></i>
-              <i class="bi bi-twitter"></i>
-              <i class="bi bi-linkedin"></i>
-            </div>
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="footer-bottom">
-          © 2025 EduArchive. Open Source Education.
-        </div>
-      </div>
-    </footer>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+    <script src="./assets/js/theme.js"></script>
+      <script src="./assets/js/layout.js"></script>
+     <script>
       // Function to dynamically generate list items from a comma/dot separated string
       function formatNotes(notesString) {
         if (!notesString) return '<p>No detailed module notes available.</p>';
@@ -1281,6 +590,8 @@
         loadSubject();
       });
     </script>
+
+
+
   </body>
 </html>
->>>>>>> 72aa1acf3d782e3a46decdc4424664185d9415f4
