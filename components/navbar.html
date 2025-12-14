@@ -1,0 +1,133 @@
+<style>
+     /* Navbar Container */
+        .top-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* Logo */
+        .logo-box {
+            background: #5b61ff;
+            padding: 8px 10px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        /* Search Bar */
+        .search-wrapper {
+            flex: 1;
+            max-width: 550px;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 40px;
+            border-radius: 12px;
+            font-size: 15px;
+            border: 1px solid #e2e8f0;
+            background: #f8fafc;
+            outline: none;
+        }
+
+        /* Icons */
+        .nav-icon {
+            font-size: 1.3rem;
+            color: #64748b;
+            cursor: pointer;
+        }
+
+        /* Contribute Button */
+        .contribute-btn {
+            background: #ecebff;
+            color: #4b47ff;
+            padding: 8px 18px;
+            border-radius: 12px;
+            border: 1px solid #cfcffe;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* User Info */
+        .user-info {
+            line-height: 1.1;
+            margin-right: 5px;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .user-role {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* Profile Picture */
+        .nav-dp {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #dbeafe;
+        }
+
+</style>
+
+<!-- Navbar -->
+    <nav class="top-nav px-4 py-2 d-flex align-items-center justify-content-between">
+
+        <!-- Left: Logo -->
+        <div class="d-flex align-items-center">
+            <div class="logo-box">
+                <i class="bi bi-book"></i>
+            </div>
+            <span class="logo-text ms-2">EduArchive</span>
+        </div>
+
+        <!-- Middle: Search Bar -->
+        <div class="search-wrapper mx-4">
+            <i class="bi bi-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search resources, subjects, teachers..." />
+        </div>
+
+        <!-- Right: Icons + Contribute + User -->
+        <div class="d-flex align-items-center gap-3">
+
+            <i class="bi bi-moon nav-icon"></i>
+            <i class="bi bi-bookmark nav-icon"></i>
+
+            <button class="contribute-btn">
+                <i class="bi bi-plus-lg"></i> Contribute
+            </button>
+
+            <div class="user-info text-end">
+                <div class="user-name">Student</div>
+                <div class="user-role">Student</div>
+            </div>
+
+            <img class="nav-dp"
+                src="https://png.pngtree.com/background/20250320/original/pngtree-cute-anime-boy-chibi-style-large-expressive-eyes-messy-black-hair-picture-image_16284274.jpg"
+                alt="profile">
+        </div>
+
+    </nav>
