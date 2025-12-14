@@ -8,6 +8,7 @@
     <title>Curriculum Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="assets/css/theme.css" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
 
@@ -165,7 +166,186 @@
             font-weight: 600;
         }
     </style>
+>>>>>>> 4bc0aa2604849253a475bfa9a64120a0ff3402a7
 
+        .tab-controls .nav-pills .nav-link {
+            color: #6c757d;
+            background-color: transparent;
+            border-radius: 5px;
+        }
+
+        .tab-content-area {
+            padding: 20px;
+        }
+
+        .semester-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid #0d6efd;
+            color: #212529;
+        }
+
+        .branch-selector {
+            padding: 15px 0;
+        }
+
+        .branch-selector .nav-pills {
+            background-color: rgb(244, 246, 248);
+            border-radius: 8px;
+            padding: 5px;
+            display: inline-flex;
+            flex-wrap: wrap;
+        }
+
+        .branch-selector .nav-link {
+            color: #000000;
+            font-weight: 500;
+            background-color: transparent;
+            padding: 8px 15px;
+        }
+
+        .branch-selector .nav-link.active {
+            background-color: #ffffff;
+            color: #070606;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            height: 100%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+        }
+
+        .course-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-code {
+            background-color: #e8ebee;
+            color: #8f9aa2;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        
+        /* Footer */
+        .edu-footer {
+            background: #f7f9fc;
+            padding: 60px 80px;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .footer-about {
+            max-width: 400px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .brand-icon {
+            background: #5b61ff;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .brand-text {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .footer-about p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .footer-links h4,
+        .footer-social h4 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            display: block;
+            margin-bottom: 8px;
+            color: #64748b;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #1e293b;
+        }
+
+        .social-icons i {
+            font-size: 22px;
+            margin-right: 18px;
+            color: #a0aec0;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .social-icons i:hover {
+            color: #4a5568;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-wrapper {
+                align-items:start !important;
+                justify-content: center;
+                padding-right: 40px;
+            }
+       
+
+            .brand {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -181,12 +361,10 @@
         <div class="back-btn"><i class="bi bi-arrow-left-circle"> Back to Home</i> </div>
     </a>
 
-
     <div class="container my-5">
         <div class="curriculum-container">
             <div class="row header-wrapper align-items-center">
-                <div class="col-8"></div>
-                <div class="col-4 tab-controls">
+                <div class="row-4 tab-controls">
                     <ul class="nav nav-pills" id="yearTabs" role="tablist">
                         <li class="nav-item"><button class="nav-link active" id="y1-tab" data-bs-toggle="tab"
                                 data-bs-target="#y1" type="button">Year 1</button></li>
@@ -450,7 +628,7 @@
                             <h3 class="semester-title">Semester 3 (CSE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA201_CSE"
+                                    <a href="subject_detail.html?course_id=MA201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math-III: Probability</h5>
@@ -466,7 +644,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS201_CSE"
+                                    <a href="subject_detail.html?course_id=HS201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Organizational Behaviour</h5>
@@ -483,7 +661,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS202_CSE"
+                                    <a href="subject_detail.html?course_id=HS202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Communication Skill-III</h5>
@@ -499,7 +677,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS201_CSE"
+                                    <a href="subject_detail.html?course_id=CS201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Object Oriented Programming</h5>
@@ -515,7 +693,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS202_CSE"
+                                    <a href="subject_detail.html?course_id=CS202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Design & Analysis of Algorithms</h5>
@@ -531,7 +709,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC201_CSE"
+                                    <a href="subject_detail.html?course_id=EC201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Microprocessor & Microcontroller</h5>
@@ -551,7 +729,7 @@
                             <h3 class="semester-title">Semester 4 (CSE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA202_CSE"
+                                    <a href="subject_detail.html?course_id=MA202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math IV: Discrete Mathematics</h5>
@@ -567,7 +745,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS203_CSE"
+                                    <a href="subject_detail.html?course_id=CS203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Theory of Computation</h5>
@@ -583,7 +761,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS204_CSE"
+                                    <a href="subject_detail.html?course_id=CS204"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Database Management System</h5>
@@ -599,7 +777,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS205_CSE"
+                                    <a href="subject_detail.html?course_id=CS205"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Computer Organization & Architecture</h5>
@@ -615,7 +793,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE201_CSE"
+                                    <a href="subject_detail.html?course_id=PE201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-I: Professional Elective</h5>
@@ -631,7 +809,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS203_CSE"
+                                    <a href="subject_detail.html?course_id=HS203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Principles of Management</h5>
@@ -654,7 +832,7 @@
                             <h3 class="semester-title">Semester 3 (EEE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA201_EEE"
+                                    <a href="subject_detail.html?course_id=MA201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math-III: Probability & Statistics</h5>
@@ -670,7 +848,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS202_EEE"
+                                    <a href="subject_detail.html?course_id=HS202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Communication Skill-III</h5>
@@ -686,7 +864,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS201_EEE"
+                                    <a href="subject_detail.html?course_id=CS201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Object Oriented Programming</h5>
@@ -702,7 +880,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE201_EEE"
+                                    <a href="subject_detail.html?course_id=EE201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Electrical & Electronics Measurements</h5>
@@ -718,7 +896,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC203_EEE"
+                                    <a href="subject_detail.html?course_id=EC203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Signals and Systems</h5>
@@ -734,7 +912,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC204_EEE"
+                                    <a href="subject_detail.html?course_id=EC204"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Analog Electronics Circuit</h5>
@@ -754,7 +932,7 @@
                             <h3 class="semester-title">Semester 4 (EEE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA202_EEE"
+                                    <a href="subject_detail.html?course_id=MA202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math IV: Optimization Technique</h5>
@@ -770,7 +948,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE202_EEE"
+                                    <a href="subject_detail.html?course_id=EE202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Electromagnetic Fields & Waves</h5>
@@ -786,7 +964,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE203_EEE"
+                                    <a href="subject_detail.html?course_id=EE203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Network Theory</h5>
@@ -802,7 +980,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE204_EEE"
+                                    <a href="subject_detail.html?course_id=EE204"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Electrical Machine I</h5>
@@ -818,7 +996,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CV201_EEE"
+                                    <a href="subject_detail.html?course_id=CV201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Environmental Engineering & Safety</h5>
@@ -834,7 +1012,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC202_EEE"
+                                    <a href="subject_detail.html?course_id=EC202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Digital Electronics Circuits</h5>
@@ -857,7 +1035,7 @@
                             <h3 class="semester-title">Semester 3 (ETC)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA201_ETC"
+                                    <a href="subject_detail.html?course_id=MA201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math-III: Stochastic Processes</h5>
@@ -873,7 +1051,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CV201_ETC"
+                                    <a href="subject_detail.html?course_id=CV201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Environmental Engineering & Safety</h5>
@@ -889,7 +1067,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS202_ETC"
+                                    <a href="subject_detail.html?course_id=HS202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Communication Skill-III</h5>
@@ -905,7 +1083,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS201_ETC"
+                                    <a href="subject_detail.html?course_id=CS201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Object Oriented Programming</h5>
@@ -921,7 +1099,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS201_ETC"
+                                    <a href="subject_detail.html?course_id=HS201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Organizational Behaviour</h5>
@@ -937,7 +1115,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC205_ETC"
+                                    <a href="subject_detail.html?course_id=EC205"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Circuit Theory</h5>
@@ -953,7 +1131,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC204_ETC"
+                                    <a href="subject_detail.html?course_id=EC204"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Analog Electronics Circuit</h5>
@@ -973,7 +1151,7 @@
                             <h3 class="semester-title">Semester 4 (ETC)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA202_ETC"
+                                    <a href="subject_detail.html?course_id=MA202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math IV: Optimization Techniques</h5>
@@ -989,7 +1167,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC206_ETC"
+                                    <a href="subject_detail.html?course_id=EC206"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Digital Communication</h5>
@@ -1005,7 +1183,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC201_ETC"
+                                    <a href="subject_detail.html?course_id=EC201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Microprocessor & Microcontroller</h5>
@@ -1021,7 +1199,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC203_ETC"
+                                    <a href="subject_detail.html?course_id=EC203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Signals and Systems</h5>
@@ -1037,7 +1215,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE202_ETC"
+                                    <a href="subject_detail.html?course_id=EE202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Electromagnetic Fields & Waves</h5>
@@ -1053,7 +1231,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE203_ETC"
+                                    <a href="subject_detail.html?course_id=EE203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Network Theory</h5>
@@ -1076,7 +1254,7 @@
                             <h3 class="semester-title">Semester 3 (CE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA201_CE"
+                                    <a href="subject_detail.html?course_id=MA201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math-III: Probability & Statistics</h5>
@@ -1092,7 +1270,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS202_CE"
+                                    <a href="subject_detail.html?course_id=HS202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Communication Skill-III</h5>
@@ -1108,7 +1286,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS201_CE"
+                                    <a href="subject_detail.html?course_id=CS201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Object Oriented Programming</h5>
@@ -1124,7 +1302,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC202_CE"
+                                    <a href="subject_detail.html?course_id=EC202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Digital Electronics Circuits</h5>
@@ -1140,7 +1318,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC201_CE"
+                                    <a href="subject_detail.html?course_id=EC201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Microprocessor & Microcontroller</h5>
@@ -1156,7 +1334,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS204_CE"
+                                    <a href="subject_detail.html?course_id=CS204"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Database Management System</h5>
@@ -1176,7 +1354,7 @@
                             <h3 class="semester-title">Semester 4 (CE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA202_CE"
+                                    <a href="subject_detail.html?course_id=MA202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math IV: Discrete Mathematics</h5>
@@ -1192,7 +1370,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS205_CE"
+                                    <a href="subject_detail.html?course_id=CS205"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Computer Organization & Architecture</h5>
@@ -1208,7 +1386,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS102_CE"
+                                    <a href="subject_detail.html?course_id=CS102"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Data Structure</h5>
@@ -1224,7 +1402,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE203_CE"
+                                    <a href="subject_detail.html?course_id=EE203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Network Theory</h5>
@@ -1240,7 +1418,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS206_CE"
+                                    <a href="subject_detail.html?course_id=CS206"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Embedded Systems</h5>
@@ -1256,7 +1434,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS203_CE"
+                                    <a href="subject_detail.html?course_id=HS203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Principles of Management</h5>
@@ -1279,7 +1457,7 @@
                             <h3 class="semester-title">Semester 3 (IT)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA201_IT"
+                                    <a href="subject_detail.html?course_id=MA201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math-III: Probability & Statistics</h5>
@@ -1295,7 +1473,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS202_IT"
+                                    <a href="subject_detail.html?course_id=HS202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Communication Skill-III</h5>
@@ -1311,7 +1489,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS201_IT"
+                                    <a href="subject_detail.html?course_id=CS201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Object Oriented Programming</h5>
@@ -1327,7 +1505,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS204_IT"
+                                    <a href="subject_detail.html?course_id=CS204"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Database Management System</h5>
@@ -1343,7 +1521,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS202_IT"
+                                    <a href="subject_detail.html?course_id=CS202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Design & Analysis of Algorithms</h5>
@@ -1359,7 +1537,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC203_IT"
+                                    <a href="subject_detail.html?course_id=EC203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Signals and Systems</h5>
@@ -1378,7 +1556,7 @@
                             <h3 class="semester-title">Semester 4 (IT)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=MA202_IT"
+                                    <a href="subject_detail.html?course_id=MA202"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Math IV: Discrete Mathematics</h5>
@@ -1394,7 +1572,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS203_IT"
+                                    <a href="subject_detail.html?course_id=CS203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Theory of Computation</h5>
@@ -1410,7 +1588,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS302_IT"
+                                    <a href="subject_detail.html?course_id=CS302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Computer Networks</h5>
@@ -1426,7 +1604,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS401_IT"
+                                    <a href="subject_detail.html?course_id=CS401"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Software Engineering</h5>
@@ -1442,7 +1620,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=IT201_IT"
+                                    <a href="subject_detail.html?course_id=IT201"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Web Technologies</h5>
@@ -1458,7 +1636,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS203_IT"
+                                    <a href="subject_detail.html?course_id=HS203"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Principles of Management</h5>
@@ -1504,7 +1682,7 @@
                             <h3 class="semester-title">Semester 5 (CSE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS301_CSE"
+                                    <a href="subject_detail.html?course_id=CS301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Compiler Design</h5>
@@ -1520,7 +1698,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS302_CSE"
+                                    <a href="subject_detail.html?course_id=CS302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Data Comm. & Networks</h5>
@@ -1536,7 +1714,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS303_CSE"
+                                    <a href="subject_detail.html?course_id=CS303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Operating System</h5>
@@ -1552,7 +1730,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE301_CSE"
+                                    <a href="subject_detail.html?course_id=PE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-II: Professional Elective</h5>
@@ -1568,7 +1746,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE302_CSE"
+                                    <a href="subject_detail.html?course_id=PE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-III: Professional Elective</h5>
@@ -1584,7 +1762,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE301_CSE"
+                                    <a href="subject_detail.html?course_id=OE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-I: Open Elective</h5>
@@ -1604,7 +1782,7 @@
                             <h3 class="semester-title">Semester 6 (CSE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS304_CSE"
+                                    <a href="subject_detail.html?course_id=CS304"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Computer Vision</h5>
@@ -1620,7 +1798,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE302_CSE"
+                                    <a href="subject_detail.html?course_id=OE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Optimization Engineering</h5>
@@ -1636,7 +1814,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS305_CSE"
+                                    <a href="subject_detail.html?course_id=CS305"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Model Checking</h5>
@@ -1652,7 +1830,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE303_CSE"
+                                    <a href="subject_detail.html?course_id=PE303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-IV: Professional Elective</h5>
@@ -1668,7 +1846,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE304_CSE"
+                                    <a href="subject_detail.html?course_id=PE304"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
@@ -1684,7 +1862,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CV301_CSE"
+                                    <a href="subject_detail.html?course_id=CV301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Environmental Eng. & Safety</h5>
@@ -1707,7 +1885,7 @@
                             <h3 class="semester-title">Semester 5 (EEE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE301_EEE"
+                                    <a href="subject_detail.html?course_id=EE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Control Systems</h5>
@@ -1723,7 +1901,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE302_EEE"
+                                    <a href="subject_detail.html?course_id=EE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Electrical Machines-II</h5>
@@ -1739,7 +1917,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE303_EEE"
+                                    <a href="subject_detail.html?course_id=EE303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Power Transmission & Distribution</h5>
@@ -1755,7 +1933,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE304_EEE"
+                                    <a href="subject_detail.html?course_id=EE304"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Power Electronics</h5>
@@ -1771,7 +1949,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE301_EEE"
+                                    <a href="subject_detail.html?course_id=PE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-I: Professional Elective</h5>
@@ -1787,7 +1965,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE301_EEE"
+                                    <a href="subject_detail.html?course_id=OE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-I: Open Elective</h5>
@@ -1807,7 +1985,7 @@
                             <h3 class="semester-title">Semester 6 (EEE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=HS301_EEE"
+                                    <a href="subject_detail.html?course_id=HS301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Organizational Behaviour</h5>
@@ -1823,7 +2001,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE302_EEE"
+                                    <a href="subject_detail.html?course_id=PE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-II: Professional Elective</h5>
@@ -1839,7 +2017,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE303_EEE"
+                                    <a href="subject_detail.html?course_id=PE303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-III: Professional Elective</h5>
@@ -1855,7 +2033,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE304_EEE"
+                                    <a href="subject_detail.html?course_id=PE304"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-IV: Professional Elective</h5>
@@ -1871,7 +2049,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EE305_EEE"
+                                    <a href="subject_detail.html?course_id=EE305"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Power System Protection</h5>
@@ -1887,7 +2065,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE302_EEE"
+                                    <a href="subject_detail.html?course_id=OE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-II: Open Elective</h5>
@@ -1910,7 +2088,7 @@
                             <h3 class="semester-title">Semester 5 (ETC)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC301_ETC"
+                                    <a href="subject_detail.html?course_id=EC301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Microwave Engineering</h5>
@@ -1926,7 +2104,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC302_ETC"
+                                    <a href="subject_detail.html?course_id=EC302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Digital Signal Processing</h5>
@@ -1942,7 +2120,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC303_ETC"
+                                    <a href="subject_detail.html?course_id=EC303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Communication Theory</h5>
@@ -1958,7 +2136,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE301_ETC"
+                                    <a href="subject_detail.html?course_id=PE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-I: Professional Elective</h5>
@@ -1974,7 +2152,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE302_ETC"
+                                    <a href="subject_detail.html?course_id=PE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-II: Professional Elective</h5>
@@ -1990,7 +2168,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE301_ETC"
+                                    <a href="subject_detail.html?course_id=OE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-I: Open Elective</h5>
@@ -2009,7 +2187,7 @@
                             <h3 class="semester-title">Semester 6 (ETC)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC304_ETC"
+                                    <a href="subject_detail.html?course_id=EC304"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Antenna Theory</h5>
@@ -2025,7 +2203,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC305_ETC"
+                                    <a href="subject_detail.html?course_id=EC305"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Mobile Communication</h5>
@@ -2041,7 +2219,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE303_ETC"
+                                    <a href="subject_detail.html?course_id=PE303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-III: Professional Elective</h5>
@@ -2057,7 +2235,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE304_ETC"
+                                    <a href="subject_detail.html?course_id=PE304"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-IV: Professional Elective</h5>
@@ -2073,7 +2251,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE302_ETC"
+                                    <a href="subject_detail.html?course_id=OE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-II: Open Elective</h5>
@@ -2089,7 +2267,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE303_ETC"
+                                    <a href="subject_detail.html?course_id=OE303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-III: Open Elective</h5>
@@ -2112,7 +2290,7 @@
                             <h3 class="semester-title">Semester 5 (CE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=EC306_CE"
+                                    <a href="subject_detail.html?course_id=EC306"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">VLSI Design</h5>
@@ -2128,7 +2306,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS306_CE"
+                                    <a href="subject_detail.html?course_id=CS306"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Advanced Computer Architecture</h5>
@@ -2144,7 +2322,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS302_CE"
+                                    <a href="subject_detail.html?course_id=CS302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Computer Networks</h5>
@@ -2160,7 +2338,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE301_CE"
+                                    <a href="subject_detail.html?course_id=PE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-I: Professional Elective</h5>
@@ -2175,7 +2353,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE302_CE"
+                                    <a href="subject_detail.html?course_id=PE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-II: Professional Elective</h5>
@@ -2190,7 +2368,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE301_CE"
+                                    <a href="subject_detail.html?course_id=OE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-I: Open Elective</h5>
@@ -2210,7 +2388,7 @@
                             <h3 class="semester-title">Semester 6 (CE)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS206_CE"
+                                    <a href="subject_detail.html?course_id=CS206"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Embedded Systems</h5>
@@ -2226,7 +2404,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS307_CE"
+                                    <a href="subject_detail.html?course_id=CS307"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Advanced Software Engineering</h5>
@@ -2242,7 +2420,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE303_CE"
+                                    <a href="subject_detail.html?course_id=PE303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-III: Professional Elective</h5>
@@ -2258,7 +2436,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE304_CE"
+                                    <a href="subject_detail.html?course_id=PE304"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-IV: Professional Elective</h5>
@@ -2274,7 +2452,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE302_CE"
+                                    <a href="subject_detail.html?course_id=OE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-II: Open Elective</h5>
@@ -2290,7 +2468,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE303_CE"
+                                    <a href="subject_detail.html?course_id=OE303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-III: Open Elective</h5>
@@ -2313,7 +2491,7 @@
                             <h3 class="semester-title">Semester 5 (IT)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=IT301_IT"
+                                    <a href="subject_detail.html?course_id=IT301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Web Services & Distributed Systems</h5>
@@ -2329,7 +2507,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS308_IT"
+                                    <a href="subject_detail.html?course_id=CS308"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Data Mining</h5>
@@ -2345,7 +2523,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS309_IT"
+                                    <a href="subject_detail.html?course_id=CS309"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Artificial Intelligence</h5>
@@ -2361,7 +2539,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE301_IT"
+                                    <a href="subject_detail.html?course_id=PE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-I: Professional Elective</h5>
@@ -2376,7 +2554,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE302_IT"
+                                    <a href="subject_detail.html?course_id=PE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-II: Professional Elective</h5>
@@ -2391,7 +2569,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE301_IT"
+                                    <a href="subject_detail.html?course_id=OE301"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-I: Open Elective</h5>
@@ -2411,7 +2589,7 @@
                             <h3 class="semester-title">Semester 6 (IT)</h3>
                             <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS310_IT"
+                                    <a href="subject_detail.html?course_id=CS310"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Cloud Computing</h5>
@@ -2427,7 +2605,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=CS311_IT"
+                                    <a href="subject_detail.html?course_id=CS311"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">Information Security</h5>
@@ -2443,7 +2621,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE303_IT"
+                                    <a href="subject_detail.html?course_id=PE303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-III: Professional Elective</h5>
@@ -2459,7 +2637,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=PE304_IT"
+                                    <a href="subject_detail.html?course_id=PE304"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">PE-IV: Professional Elective</h5>
@@ -2475,7 +2653,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE302_IT"
+                                    <a href="subject_detail.html?course_id=OE302"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-II: Open Elective</h5>
@@ -2491,7 +2669,7 @@
                                     </a>
                                 </div>
                                 <div class="col">
-                                    <a href="subject_detail.html?course_id=OE303_IT"
+                                    <a href="subject_detail.html?course_id=OE303"
                                         class="course-card text-decoration-none text-dark">
                                         <div class="d-flex justify-content-between align-items-start mb-2">
                                             <h5 class="card-title fw-bold">OE-III: Open Elective</h5>
@@ -2516,6 +2694,7 @@
                     <h1 class="fw-bold mb-2">Year 4 Curriculum</h1>
                     <p class="text-secondary mb-4">Final year project and specialized subjects</p>
 
+<<<<<<< HEAD
                     <div class="branch-selector">
                         <ul class="nav nav-pills" id="branch4Tabs" role="tablist">
                             <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill"
@@ -3166,9 +3345,110 @@
 
                         </div>
 
+=======
+          <div class="tab-content">
+            <!-- CSE YEAR 4 -->
+            <div class="tab-pane fade show active" id="cse4">
+              <h3 class="semester-title">Semester 7 (CSE)</h3>
+              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                  <a href="subject_detail.html?course_id=CS401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Software Engineering</h5>
+                      <span class="course-code">CS401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Advanced SDLC models, project management, maintenance.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 19</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=CS402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Machine Learning</h5>
+                      <span class="course-code">CS402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Supervised/unsupervised learning, neural networks, deep learning.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 20</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PE401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+                      <span class="course-code">PE401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective in advanced CS domain.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 14</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PE402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">PE-VII: Professional Elective</h5>
+                      <span class="course-code">PE402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective in emerging technologies.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=OE401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+                      <span class="course-code">OE401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective from any engineering domain.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=HS401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Technical Writing</h5>
+                      <span class="course-code">HS401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Research papers, technical reports, documentation standards.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="semester-title">Semester 8 (CSE)</h3>
+              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PR401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Research Project</h5>
+                      <span class="course-code">PR401</span>
+>>>>>>> 4bc0aa2604849253a475bfa9a64120a0ff3402a7
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             </div>
             <div id="footer"></div>
             <script>
@@ -3179,6 +3459,515 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
             <script src="./assets/js/theme.js"></script>
             <script src="./assets/js/layout.js"></script>
+=======
+
+            <!-- EEE YEAR 4 -->
+            <div class="tab-pane fade" id="eee4">
+              <h3 class="semester-title">Semester 7 (EEE)</h3>
+              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                  <a href="subject_detail.html?course_id=EE401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Power Systems Operation & Control</h5>
+                      <span class="course-code">EE401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Load flow analysis, AGC, power system stability.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 13</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PE401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
+                      <span class="course-code">PE401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective in electrical engineering.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PE402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+                      <span class="course-code">PE402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective in power systems.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=OE401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+                      <span class="course-code">OE401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=OE402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
+                      <span class="course-code">OE402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=HS402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Principle of Management</h5>
+                      <span class="course-code">HS402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Management principles for engineers.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="semester-title">Semester 8 (EEE)</h3>
+              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PR401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Research Project</h5>
+                      <span class="course-code">PR401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Final year capstone project.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- ETC YEAR 4 -->
+            <div class="tab-pane fade" id="etc4">
+              <h3 class="semester-title">Semester 7 (ETC)</h3>
+              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                  <a href="subject_detail.html?course_id=EC401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Optical Communication</h5>
+                      <span class="course-code">EC401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Optical fibers, sources, detectors, network architecture.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PE401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
+                      <span class="course-code">PE401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PE402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+                      <span class="course-code">PE402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=OE401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+                      <span class="course-code">OE401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=OE402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
+                      <span class="course-code">OE402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=HS402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Principle of Management</h5>
+                      <span class="course-code">HS402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Management principles.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="semester-title">Semester 8 (ETC)</h3>
+              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PR401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Research Project / Internship</h5>
+                      <span class="course-code">PR401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Major project or industrial internship.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- CE YEAR 4 -->
+            <div class="tab-pane fade" id="ce4">
+              <h3 class="semester-title">Semester 7 (CE)</h3>
+              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                <div class="col">
+                  <a href="subject_detail.html?course_id=CS403" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">Real-Time Systems</h5>
+                      <span class="course-code">CS403</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Real-time scheduling, reliability, fault tolerance.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PE401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
+                      <span class="course-code">PE401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=PE402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+                      <span class="course-code">PE402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=OE401" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+                      <span class="course-code">OE401</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="col">
+                  <a href="subject_detail.html?course_id=OE402" class="course-card text-decoration-none text-dark">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
+                      <span class="course-code">OE402</span>
+                    </div>
+                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
+                    <div class="card-footer-icons mt-auto pt-2 border-top">
+                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                      <span class="icon-item"><i class="bi bi-book"></i> 3 </span>
+<span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+</div>
+</a>
+</div>
+
+<div class="col">
+  <a href="subject_detail.html?course_id=HS402" class="course-card text-decoration-none text-dark">
+    <div class="d-flex justify-content-between align-items-start mb-2">
+      <h5 class="card-title fw-bold">Principle of Management</h5>
+      <span class="course-code">HS402</span>
+    </div>
+    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+      Management principles for engineering professionals.
+    </p>
+    <div class="card-footer-icons mt-auto pt-2 border-top">
+      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+    </div>
+  </a>
+</div>
+
+</div>
+
+<h3 class="semester-title">Semester 8 (CE)</h3>
+<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+  <div class="col">
+    <a href="subject_detail.html?course_id=PR401" class="course-card text-decoration-none text-dark">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <h5 class="card-title fw-bold">Research Project / Internship</h5>
+        <span class="course-code">PR401</span>
+      </div>
+      <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+        Final year major project or industrial internship.
+      </p>
+      <div class="card-footer-icons mt-auto pt-2 border-top">
+        <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
+        <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+        <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+      </div>
+    </a>
+  </div>
+</div>
+</div>
+<!-- IT YEAR 4 -->
+<div class="tab-pane fade" id="it4">
+
+  <h3 class="semester-title">Semester 7 (IT)</h3>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+
+    <div class="col">
+      <a href="subject_detail.html?course_id=IT401" class="course-card text-decoration-none text-dark">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h5 class="card-title fw-bold">Blockchain Technology</h5>
+          <span class="course-code">IT401</span>
+        </div>
+        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+          Cryptocurrencies, smart contracts, and decentralized applications.
+        </p>
+        <div class="card-footer-icons mt-auto pt-2 border-top">
+          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
+          <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+          <span class="icon-item"><i class="bi bi-chat-dots"></i> 13</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="subject_detail.html?course_id=PE401" class="course-card text-decoration-none text-dark">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
+          <span class="course-code">PE401</span>
+        </div>
+        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+          Specialized elective in IT domain.
+        </p>
+        <div class="card-footer-icons mt-auto pt-2 border-top">
+          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+          <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+          <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="subject_detail.html?course_id=PE402" class="course-card text-decoration-none text-dark">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+          <span class="course-code">PE402</span>
+        </div>
+        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+          Advanced elective in emerging IT technologies.
+        </p>
+        <div class="card-footer-icons mt-auto pt-2 border-top">
+          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+          <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+          <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="subject_detail.html?course_id=OE401" class="course-card text-decoration-none text-dark">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+          <span class="course-code">OE401</span>
+        </div>
+        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+          Open elective.
+        </p>
+        <div class="card-footer-icons mt-auto pt-2 border-top">
+          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+          <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+          <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="subject_detail.html?course_id=OE402" class="course-card text-decoration-none text-dark">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
+          <span class="course-code">OE402</span>
+        </div>
+        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+          Open elective.
+        </p>
+        <div class="card-footer-icons mt-auto pt-2 border-top">
+          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+          <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+          <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a href="subject_detail.html?course_id=HS402" class="course-card text-decoration-none text-dark">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h5 class="card-title fw-bold">Principle of Management</h5>
+          <span class="course-code">HS402</span>
+        </div>
+        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+          Management principles.
+        </p>
+        <div class="card-footer-icons mt-auto pt-2 border-top">
+          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+          <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+          <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <h3 class="semester-title">Semester 8 (IT)</h3>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+    <div class="col">
+      <a href="subject_detail.html?course_id=PR401" class="course-card text-decoration-none text-dark">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h5 class="card-title fw-bold">Research Project / Internship</h5>
+          <span class="course-code">PR401</span>
+        </div>
+        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+          Final year major project or industrial internship.
+        </p>
+        <div class="card-footer-icons mt-auto pt-2 border-top">
+          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
+          <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+          <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+            </div>
+        </div>
+    </div>
+        <!-- Footer -->
+        <footer class="edu-footer">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="brand">
+                        <i class="bi bi-book-fill brand-icon"></i>
+                        <span class="brand-text">EduArchive</span>
+                    </div>
+
+                    <p>
+                        EduArchive is the ultimate academic companion for engineering
+                        students. From semester exams to placement interviews, we bridge the
+                        gap between classroom learning and industry requirements with
+                        curated notes, PYQs, and expert lectures.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contribute</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <i class="bi bi-github"></i>
+                        <i class="bi bi-twitter"></i>
+                        <i class="bi bi-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="footer-bottom">© 2025 EduArchive. Open Source Education.</div>
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+>>>>>>> 4bc0aa2604849253a475bfa9a64120a0ff3402a7
 </body>
 
 </html>
