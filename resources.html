@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 
 <head>
     <meta charset="UTF-8" />
@@ -8,161 +9,178 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+
     <style>
-  /* Base */
-  body {
-    font-family: "Inter", sans-serif;
-    background-color: var(--bg-footer);
-    padding-top: 0;
-    color: var(--text-primary);
-  }
+        /* Base */
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: var(--bg-main);
+            padding-top: 0;
+            color: var(--text-primary);
+        }
 
-  /* Back Button */
-  .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 14px;
-    color: var(--text-primary);
-    background-color: transparent;
-    cursor: pointer;
-    margin: 15px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 14px;
+            color: var(--text-primary);
+            background-color: transparent;
+            cursor: pointer;
+            margin: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-  .back-btn:hover {
-    background-color: var(--primary);
-    color: var(--text-inverse);
-  }
+        .back-btn:hover {
+            background-color: var(--primary);
+            color: var(--text-inverse);
+        }
 
-  /* Curriculum Container */
-  .curriculum-container {
-    border: 1px solid var(--border-soft);
-    background-color: var(--bg-muted);
-    border-radius: 10px;
-    box-shadow: var(--shadow-sm);
-  }
+        /* Curriculum Container */
+        .curriculum-container {
+            border: 1px solid var(--border-soft);
+            background-color: var(--bg-muted);
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+        }
 
-  /* Header */
-  .header-wrapper {
-    padding: 20px;
-    border-bottom: 1px solid var(--border-light);
-  }
+        /* Header */
+        .header-wrapper {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-light);
+        }
 
-  /* Tab Controls */
-  .tab-controls {
-    display: flex;
-    justify-content: flex-end;
-  }
+        /* Tab Controls */
+        .tab-controls {
+            display: flex;
+            justify-content: flex-end;
+        }
 
-  .tab-controls .nav-pills {
-    background-color: var(--bg-light);
-    border-radius: 10px;
-    padding: 5px;
-  }
+        .tab-controls .nav-pills {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 5px;
+        }
 
-  .tab-controls .nav-pills .nav-link {
-    color: var(--text-secondary);
-    background-color: transparent;
-    border-radius: 5px;
-  }
+        .tab-controls .nav-pills .nav-link {
+            color: var(--text-secondary);
+            background-color: transparent;
+            border-radius: 5px;
+        }
 
-  .tab-controls .nav-pills .nav-link.active {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    font-weight: 600;
-    box-shadow: var(--shadow-sm);
-  }
+        .tab-controls .nav-pills .nav-link.active {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
 
-  /* Content Area */
-  .tab-content-area {
-    padding: 20px;
-  }
+        /* Content Area */
+        .tab-content-area {
+            padding: 20px;
+        }
 
-  /* Semester Title */
-  .semester-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin: 20px 0 15px;
-    padding-left: 15px;
-    border-left: 4px solid var(--primary);
-    color: var(--text-primary);
-  }
+        /* Semester Title */
+        .semester-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 20px 0 15px;
+            padding-left: 15px;
+            border-left: 4px solid var(--primary);
+            color: var(--text-primary);
+        }
 
-  /* Branch Selector */
-  .branch-selector {
-    padding: 15px 0;
-  }
+        /* Branch Selector */
+        .branch-selector {
+            padding: 15px 0;
+        }
 
-  .branch-selector .nav-pills {
-    background-color: var(--bg-muted);
-    border-radius: 8px;
-    padding: 5px;
-    display: inline-flex;
-    flex-wrap: wrap;
-  }
+        .branch-selector .nav-pills {
+            background-color: var(--bg-muted);
+            border-radius: 8px;
+            padding: 5px;
+            display: inline-flex;
+            flex-wrap: wrap;
+        }
 
-  .branch-selector .nav-link {
-    color: var(--text-primary);
-    font-weight: 500;
-    background-color: transparent;
-    padding: 8px 15px;
-  }
+        .branch-selector .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            background-color: transparent;
+            padding: 8px 15px;
+        }
 
-  .branch-selector .nav-link.active {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    border-radius: 5px;
-    box-shadow: var(--shadow-sm);
-  }
+        .branch-selector .nav-link.active {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            border-radius: 5px;
+            box-shadow: var(--shadow-sm);
+        }
 
-  /* Course Card */
-  .course-card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-soft);
-    border-radius: 8px;
-    height: 100%;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    padding: 20px;
-  }
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
 
-  .course-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-  }
+        .card-footer-icons {
+            display: flex;
+            gap: 15px;
+            color: var(--text-secondary);
+        }
 
-  /* Course Code Badge */
-  .course-code {
-    background-color: var(--bg-light);
-    color: var(--text-secondary);
-    padding: 3px 8px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 600;
-  }
-</style>
+        /* Course Card */
+        .course-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            height: 100%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+        }
+
+        .course-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Course Code Badge */
+        .course-code {
+            background-color: var(--bg-light);
+            color: var(--text-secondary);
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+    </style>
 
 </head>
 
 <body>
-   <div id="navbar"></div>
+    <div id="navbar"></div>
 
-<script>
-  fetch('./components/navbar.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('navbar').innerHTML = html);
-</script>
-    
-         <a href="index.html"><div class="back-btn"><i class="bi bi-arrow-left-circle"> Back to Home</i>  </div></a>
-     
+    <script>
+        fetch('./components/navbar.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('navbar').innerHTML = html);
+    </script>
+
+    <a href="index.html">
+        <div class="back-btn"><i class="bi bi-arrow-left-circle"> Back to Home</i> </div>
+    </a>
+
 
     <div class="container my-5">
         <div class="curriculum-container">
@@ -2494,604 +2512,673 @@
                 </div>
 
                 <!-- YEAR 4 -->
-        <div class="tab-pane fade" id="y4">
-          <h1 class="fw-bold mb-2">Year 4 Curriculum</h1>
-          <p class="text-secondary mb-4">Final year project and specialized subjects</p>
-          
-          <div class="branch-selector">
-            <ul class="nav nav-pills" id="branch4Tabs" role="tablist">
-              <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#cse4" type="button">CSE</button></li>
-              <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#eee4" type="button">EEE</button></li>
-              <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#etc4" type="button">ETC</button></li>
-              <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#ce4" type="button">CE</button></li>
-              <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#it4" type="button">IT</button></li>
-            </ul>
-          </div>
+                <div class="tab-pane fade" id="y4">
+                    <h1 class="fw-bold mb-2">Year 4 Curriculum</h1>
+                    <p class="text-secondary mb-4">Final year project and specialized subjects</p>
 
-          <div class="tab-content">
-            <!-- CSE YEAR 4 -->
-            <div class="tab-pane fade show active" id="cse4">
-              <h3 class="semester-title">Semester 7 (CSE)</h3>
-              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-                <div class="col">
-                  <a href="subject_detail.html?course_id=CS401_CSE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Software Engineering</h5>
-                      <span class="course-code">CS401</span>
+                    <div class="branch-selector">
+                        <ul class="nav nav-pills" id="branch4Tabs" role="tablist">
+                            <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill"
+                                    data-bs-target="#cse4" type="button">CSE</button></li>
+                            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#eee4"
+                                    type="button">EEE</button></li>
+                            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#etc4"
+                                    type="button">ETC</button></li>
+                            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#ce4"
+                                    type="button">CE</button></li>
+                            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#it4"
+                                    type="button">IT</button></li>
+                        </ul>
                     </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Advanced SDLC models, project management, maintenance.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 19</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 7</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=CS402_CSE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Machine Learning</h5>
-                      <span class="course-code">CS402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Supervised/unsupervised learning, neural networks, deep learning.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 20</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 7</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PE401_CSE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
-                      <span class="course-code">PE401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective in advanced CS domain.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 14</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PE402_CSE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">PE-VII: Professional Elective</h5>
-                      <span class="course-code">PE402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective in emerging technologies.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=OE401_CSE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
-                      <span class="course-code">OE401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective from any engineering domain.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=HS401_CSE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Technical Writing</h5>
-                      <span class="course-code">HS401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Research papers, technical reports, documentation standards.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
 
-              <h3 class="semester-title">Semester 8 (CSE)</h3>
-              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PR401_CSE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Research Project</h5>
-                      <span class="course-code">PR401</span>
+                    <div class="tab-content">
+                        <!-- CSE YEAR 4 -->
+                        <div class="tab-pane fade show active" id="cse4">
+                            <h3 class="semester-title">Semester 7 (CSE)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=CS401_CSE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Software Engineering</h5>
+                                            <span class="course-code">CS401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Advanced SDLC
+                                            models, project management, maintenance.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 19</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 14</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=CS402_CSE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Machine Learning</h5>
+                                            <span class="course-code">CS402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Supervised/unsupervised learning, neural networks, deep learning.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 20</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 7</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 15</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE401_CSE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+                                            <span class="course-code">PE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized
+                                            elective in advanced CS domain.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 14</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 11</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE402_CSE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-VII: Professional Elective</h5>
+                                            <span class="course-code">PE402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized
+                                            elective in emerging technologies.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=OE401_CSE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+                                            <span class="course-code">OE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective
+                                            from any engineering domain.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=HS401_CSE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Technical Writing</h5>
+                                            <span class="course-code">HS401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Research
+                                            papers, technical reports, documentation standards.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <h3 class="semester-title">Semester 8 (CSE)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PR401_CSE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Research Project</h5>
+                                            <span class="course-code">PR401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Final year
+                                            major project focusing on research and development.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EEE YEAR 4 -->
+                        <div class="tab-pane fade" id="eee4">
+                            <h3 class="semester-title">Semester 7 (EEE)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=EE401_EEE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Power Systems Operation & Control</h5>
+                                            <span class="course-code">EE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Load flow
+                                            analysis, AGC, power system stability.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 13</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE401_EEE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
+                                            <span class="course-code">PE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized
+                                            elective in electrical engineering.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE402_EEE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+                                            <span class="course-code">PE402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized
+                                            elective in power systems.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=OE401_EEE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+                                            <span class="course-code">OE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=OE402_EEE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
+                                            <span class="course-code">OE402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=HS402_EEE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Principle of Management</h5>
+                                            <span class="course-code">HS402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Management
+                                            principles for engineers.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <h3 class="semester-title">Semester 8 (EEE)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PR401_EEE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Research Project</h5>
+                                            <span class="course-code">PR401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Final year
+                                            capstone project.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ETC YEAR 4 -->
+                        <div class="tab-pane fade" id="etc4">
+                            <h3 class="semester-title">Semester 7 (ETC)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=EC401_ETC"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Optical Communication</h5>
+                                            <span class="course-code">EC401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Optical
+                                            fibers, sources, detectors, network architecture.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE401_ETC"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
+                                            <span class="course-code">PE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE402_ETC"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+                                            <span class="course-code">PE402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=OE401_ETC"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+                                            <span class="course-code">OE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=OE402_ETC"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
+                                            <span class="course-code">OE402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=HS402_ETC"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Principle of Management</h5>
+                                            <span class="course-code">HS402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Management
+                                            principles.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <h3 class="semester-title">Semester 8 (ETC)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PR401_ETC"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Research Project / Internship</h5>
+                                            <span class="course-code">PR401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Major project
+                                            or industrial internship.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CE YEAR 4 -->
+                        <div class="tab-pane fade" id="ce4">
+                            <h3 class="semester-title">Semester 7 (CE)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=CS403_CE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Real-Time Systems</h5>
+                                            <span class="course-code">CS403</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Real-time
+                                            scheduling, reliability, fault tolerance.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE401_CE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
+                                            <span class="course-code">PE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE402_CE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+                                            <span class="course-code">PE402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=OE401_CE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+                                            <span class="course-code">OE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=OE402_CE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
+                                            <span class="course-code">OE402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open
+                                            elective.</p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 3 </span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=HS402_CE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Principle of Management</h5>
+                                            <span class="course-code">HS402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Management principles for engineering professionals.
+                                        </p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <h3 class="semester-title">Semester 8 (CE)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PR401_CE"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Research Project / Internship</h5>
+                                            <span class="course-code">PR401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Final year major project or industrial internship.
+                                        </p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- IT YEAR 4 -->
+                        <div class="tab-pane fade" id="it4">
+
+                            <h3 class="semester-title">Semester 7 (IT)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=IT401_IT"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Blockchain Technology</h5>
+                                            <span class="course-code">IT401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Cryptocurrencies, smart contracts, and decentralized applications.
+                                        </p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 6</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 13</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE401_IT"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
+                                            <span class="course-code">PE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Specialized elective in IT domain.
+                                        </p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 5</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PE402_IT"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
+                                            <span class="course-code">PE402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Advanced elective in emerging IT technologies.
+                                        </p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=OE401_IT"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
+                                            <span class="course-code">OE401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Open elective.
+                                        </p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 4</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=OE402_IT"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
+                                            <span class="course-code">OE402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Open elective.
+                                        </p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=HS402_IT"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Principle of Management</h5>
+                                            <span class="course-code">HS402</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Management principles.
+                                        </p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 3</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <h3 class="semester-title">Semester 8 (IT)</h3>
+                            <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                                <div class="col">
+                                    <a href="subject_detail.html?course_id=PR401_IT"
+                                        class="course-card text-decoration-none text-dark">
+                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                            <h5 class="card-title fw-bold">Research Project / Internship</h5>
+                                            <span class="course-code">PR401</span>
+                                        </div>
+                                        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
+                                            Final year major project or industrial internship.
+                                        </p>
+                                        <div class="card-footer-icons mt-auto pt-2 border-top">
+                                            <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
+                                            <span class="icon-item"><i class="bi bi-book"></i> 8</span>
+                                            <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Final year major project focusing on research and development.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 8</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
-                    </div>
-                  </a>
                 </div>
-              </div>
             </div>
-
-            <!-- EEE YEAR 4 -->
-            <div class="tab-pane fade" id="eee4">
-              <h3 class="semester-title">Semester 7 (EEE)</h3>
-              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-                <div class="col">
-                  <a href="subject_detail.html?course_id=EE401_EEE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Power Systems Operation & Control</h5>
-                      <span class="course-code">EE401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Load flow analysis, AGC, power system stability.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 6</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 13</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PE401_EEE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
-                      <span class="course-code">PE401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective in electrical engineering.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PE402_EEE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
-                      <span class="course-code">PE402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective in power systems.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=OE401_EEE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
-                      <span class="course-code">OE401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=OE402_EEE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
-                      <span class="course-code">OE402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=HS402_EEE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Principle of Management</h5>
-                      <span class="course-code">HS402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Management principles for engineers.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <h3 class="semester-title">Semester 8 (EEE)</h3>
-              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PR401_EEE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Research Project</h5>
-                      <span class="course-code">PR401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Final year capstone project.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 8</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
             </div>
-
-            <!-- ETC YEAR 4 -->
-            <div class="tab-pane fade" id="etc4">
-              <h3 class="semester-title">Semester 7 (ETC)</h3>
-              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-                <div class="col">
-                  <a href="subject_detail.html?course_id=EC401_ETC" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Optical Communication</h5>
-                      <span class="course-code">EC401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Optical fibers, sources, detectors, network architecture.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 6</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PE401_ETC" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
-                      <span class="course-code">PE401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PE402_ETC" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
-                      <span class="course-code">PE402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=OE401_ETC" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
-                      <span class="course-code">OE401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=OE402_ETC" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
-                      <span class="course-code">OE402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=HS402_ETC" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Principle of Management</h5>
-                      <span class="course-code">HS402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Management principles.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              <h3 class="semester-title">Semester 8 (ETC)</h3>
-              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PR401_ETC" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Research Project / Internship</h5>
-                      <span class="course-code">PR401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Major project or industrial internship.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 8</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- CE YEAR 4 -->
-            <div class="tab-pane fade" id="ce4">
-              <h3 class="semester-title">Semester 7 (CE)</h3>
-              <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-                <div class="col">
-                  <a href="subject_detail.html?course_id=CS403_CE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">Real-Time Systems</h5>
-                      <span class="course-code">CS403</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Real-time scheduling, reliability, fault tolerance.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 17</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 6</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 12</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PE401_CE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
-                      <span class="course-code">PE401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 5</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=PE402_CE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
-                      <span class="course-code">PE402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Specialized elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=OE401_CE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
-                      <span class="course-code">OE401</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-                      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
-                    </div>
-                  </a>
-                </div>
-                <div class="col">
-                  <a href="subject_detail.html?course_id=OE402_CE" class="course-card text-decoration-none text-dark">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                      <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
-                      <span class="course-code">OE402</span>
-                    </div>
-                    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">Open elective.</p>
-                    <div class="card-footer-icons mt-auto pt-2 border-top">
-                      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
-                      <span class="icon-item"><i class="bi bi-book"></i> 3 </span>
-<span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
-</div>
-</a>
-</div>
-
-<div class="col">
-  <a href="subject_detail.html?course_id=HS402_CE" class="course-card text-decoration-none text-dark">
-    <div class="d-flex justify-content-between align-items-start mb-2">
-      <h5 class="card-title fw-bold">Principle of Management</h5>
-      <span class="course-code">HS402</span>
-    </div>
-    <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
-      Management principles for engineering professionals.
-    </p>
-    <div class="card-footer-icons mt-auto pt-2 border-top">
-      <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
-      <span class="icon-item"><i class="bi bi-book"></i> 3</span>
-      <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
-    </div>
-  </a>
-</div>
-
-</div>
-
-<h3 class="semester-title">Semester 8 (CE)</h3>
-<div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-  <div class="col">
-    <a href="subject_detail.html?course_id=PR401_CE" class="course-card text-decoration-none text-dark">
-      <div class="d-flex justify-content-between align-items-start mb-2">
-        <h5 class="card-title fw-bold">Research Project / Internship</h5>
-        <span class="course-code">PR401</span>
-      </div>
-      <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
-        Final year major project or industrial internship.
-      </p>
-      <div class="card-footer-icons mt-auto pt-2 border-top">
-        <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
-        <span class="icon-item"><i class="bi bi-book"></i> 8</span>
-        <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
-      </div>
-    </a>
-  </div>
-</div>
-</div>
-<!-- IT YEAR 4 -->
-<div class="tab-pane fade" id="it4">
-
-  <h3 class="semester-title">Semester 7 (IT)</h3>
-  <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-
-    <div class="col">
-      <a href="subject_detail.html?course_id=IT401_IT" class="course-card text-decoration-none text-dark">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <h5 class="card-title fw-bold">Blockchain Technology</h5>
-          <span class="course-code">IT401</span>
-        </div>
-        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
-          Cryptocurrencies, smart contracts, and decentralized applications.
-        </p>
-        <div class="card-footer-icons mt-auto pt-2 border-top">
-          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 18</span>
-          <span class="icon-item"><i class="bi bi-book"></i> 6</span>
-          <span class="icon-item"><i class="bi bi-chat-dots"></i> 13</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="col">
-      <a href="subject_detail.html?course_id=PE401_IT" class="course-card text-decoration-none text-dark">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <h5 class="card-title fw-bold">PE-V: Professional Elective</h5>
-          <span class="course-code">PE401</span>
-        </div>
-        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
-          Specialized elective in IT domain.
-        </p>
-        <div class="card-footer-icons mt-auto pt-2 border-top">
-          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 13</span>
-          <span class="icon-item"><i class="bi bi-book"></i> 5</span>
-          <span class="icon-item"><i class="bi bi-chat-dots"></i> 10</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="col">
-      <a href="subject_detail.html?course_id=PE402_IT" class="course-card text-decoration-none text-dark">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <h5 class="card-title fw-bold">PE-VI: Professional Elective</h5>
-          <span class="course-code">PE402</span>
-        </div>
-        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
-          Advanced elective in emerging IT technologies.
-        </p>
-        <div class="card-footer-icons mt-auto pt-2 border-top">
-          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 12</span>
-          <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-          <span class="icon-item"><i class="bi bi-chat-dots"></i> 9</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="col">
-      <a href="subject_detail.html?course_id=OE401_IT" class="course-card text-decoration-none text-dark">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <h5 class="card-title fw-bold">OE-IV: Open Elective</h5>
-          <span class="course-code">OE401</span>
-        </div>
-        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
-          Open elective.
-        </p>
-        <div class="card-footer-icons mt-auto pt-2 border-top">
-          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 11</span>
-          <span class="icon-item"><i class="bi bi-book"></i> 4</span>
-          <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="col">
-      <a href="subject_detail.html?course_id=OE402_IT" class="course-card text-decoration-none text-dark">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <h5 class="card-title fw-bold">OE-V: Open Elective</h5>
-          <span class="course-code">OE402</span>
-        </div>
-        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
-          Open elective.
-        </p>
-        <div class="card-footer-icons mt-auto pt-2 border-top">
-          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
-          <span class="icon-item"><i class="bi bi-book"></i> 3</span>
-          <span class="icon-item"><i class="bi bi-chat-dots"></i> 7</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="col">
-      <a href="subject_detail.html?course_id=HS402_IT" class="course-card text-decoration-none text-dark">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <h5 class="card-title fw-bold">Principle of Management</h5>
-          <span class="course-code">HS402</span>
-        </div>
-        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
-          Management principles.
-        </p>
-        <div class="card-footer-icons mt-auto pt-2 border-top">
-          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 10</span>
-          <span class="icon-item"><i class="bi bi-book"></i> 3</span>
-          <span class="icon-item"><i class="bi bi-chat-dots"></i> 8</span>
-        </div>
-      </a>
-    </div>
-
-  </div>
-
-  <h3 class="semester-title">Semester 8 (IT)</h3>
-  <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
-    <div class="col">
-      <a href="subject_detail.html?course_id=PR401_IT" class="course-card text-decoration-none text-dark">
-        <div class="d-flex justify-content-between align-items-start mb-2">
-          <h5 class="card-title fw-bold">Research Project / Internship</h5>
-          <span class="course-code">PR401</span>
-        </div>
-        <p class="card-text text-secondary mb-3" style="font-size: 0.9rem">
-          Final year major project or industrial internship.
-        </p>
-        <div class="card-footer-icons mt-auto pt-2 border-top">
-          <span class="icon-item"><i class="bi bi-file-earmark-text"></i> 25</span>
-          <span class="icon-item"><i class="bi bi-book"></i> 8</span>
-          <span class="icon-item"><i class="bi bi-chat-dots"></i> 18</span>
-        </div>
-      </a>
-    </div>
-  </div>
-
-</div>
-
-            </div>
-        </div>
-    </div>
-    <div id="footer"></div>
-    <script>
-  fetch('./components/footer.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <div id="footer"></div>
+            <script>
+                fetch('./components/footer.html')
+                    .then(res => res.text())
+                    .then(html => document.getElementById('footer').innerHTML = html);
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="./assets/js/theme.js"></script>
+            <script src="./assets/js/layout.js"></script>
 </body>
 
 </html>

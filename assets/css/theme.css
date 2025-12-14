@@ -44,4 +44,30 @@
   --shadow-sm: 0px 6px 24px rgba(0, 0, 0, 0.06);
   --shadow-md: 0px 12px 24px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0px 12px 28px rgba(0, 0, 0, 0.08);
+
+}
+
+
+  /* Dark Theme */
+[data-theme="dark"] {
+  --bg-main: #020617;
+  --bg-light: #020617;
+  --bg-section: #020617;
+  --bg-card: #020617;
+  --bg-muted: #0f172a;
+
+
+  --text-primary: #e5e7eb;
+  --text-heading: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-inverse: #020617;
+
+  --border-light: #1e293b;
+  --border-soft: #1e293b;
+  --border-card: #1e293b;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
 }
