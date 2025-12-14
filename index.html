@@ -149,6 +149,7 @@
 
         .hero button:hover {
             background-color: var(--primary-hover);
+            color: var(--text-inverse);
         }
 
         .hero .b2 {
@@ -240,7 +241,7 @@
     <div id="navbar"></div>
 
     <script>
-        fetch('/components/navbar.html')
+        fetch('./components/navbar.html')
             .then(res => res.text())
             .then(html => document.getElementById('navbar').innerHTML = html);
     </script>
@@ -387,7 +388,7 @@
     <div id="footer"></div>
 
     <script>
-        fetch('/components/footer.html')
+        fetch('./components/footer.html')
             .then(res => res.text())
             .then(html => document.getElementById('footer').innerHTML = html);
     </script>
