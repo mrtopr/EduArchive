@@ -16,239 +16,235 @@
     <link rel="stylesheet" href="assets/css/theme.css" />
 
     <style>
-  body {
-    font-family: "Inter", sans-serif;
-    background: var(--bg-main);
-    color: var(--text-primary);
-  }
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+        }
 
-  /*  Hero Section  */
-  .hero {
-    background-color: var(--bg-section);
-    text-align: center;
-    padding: 120px 20px;
-  }
+        /*  Hero Section  */
+        .hero {
+            background-color: var(--bg-section);
+            text-align: center;
+            padding: 120px 20px;
+        }
 
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 20px;
-    color: var(--text-heading);
-  }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: var(--text-heading);
+        }
 
-  .tag {
-    display: inline-block;
-    background-color: var(--primary-soft);
-    color: var(--accent-purple);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-soft);
+            color: var(--accent-purple);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
 
-  /* Main Sections */
-  .main {
-    text-align: center;
-    padding: 60px 20px;
-  }
+        /* Main Sections */
+        .main {
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-  .year-section {
-    padding: 60px 20px;
-  }
+        .year-section {
+            padding: 60px 20px;
+        }
 
-  .year-subtitle {
-    color: var(--text-secondary);
-    font-size: 1rem;
-  }
+        .year-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
 
-  /*  Year Cards */
-  .year-card {
-    background: var(--bg-card);
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid var(--border-card);
-    text-align: center;
-    transition: 0.25s;
-  }
+        /*  Year Cards */
+        .year-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-card);
+            text-align: center;
+            transition: 0.25s;
+        }
 
-  .year-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-  }
+        .year-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
 
-  .year-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px auto;
-    font-size: 1.8rem;
-  }
+        .year-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            font-size: 1.8rem;
+        }
 
-  /* Icon Colors */
-  .purple-bg {
-    background: var(--accent-purple-soft);
-    color: var(--accent-purple);
-  }
+        /* Icon Colors */
+        .purple-bg {
+            background: var(--accent-purple-soft);
+            color: var(--accent-purple);
+        }
 
-  .green-bg {
-    background: var(--secondary-soft);
-    color: var(--secondary);
-  }
+        .green-bg {
+            background: var(--secondary-soft);
+            color: var(--secondary);
+        }
 
-  .yellow-bg {
-    background: var(--accent-yellow-soft);
-    color: var(--accent-yellow);
-  }
+        .yellow-bg {
+            background: var(--accent-yellow-soft);
+            color: var(--accent-yellow);
+        }
 
-  .red-bg {
-    background: var(--accent-red-soft);
-    color: var(--accent-red);
-  }
+        .red-bg {
+            background: var(--accent-red-soft);
+            color: var(--accent-red);
+        }
 
-  .year-title {
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
+        .year-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
 
-  .year-text {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin-bottom: 20px;
-  }
+        .year-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
 
-  /* Buttons */
-  .explore-btn {
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    border: 1px solid var(--border-btn);
-    background: var(--bg-main);
-    font-weight: 600;
-    transition: 0.2s;
-  }
+        /* Buttons */
+        .explore-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border-btn);
+            background: var(--bg-main);
+            font-weight: 600;
+            transition: 0.2s;
+        }
 
-  .explore-btn:hover {
-    background: var(--bg-muted);
-    color: var(--text-primary);
-  }
+        .explore-btn:hover {
+            background: var(--bg-muted);
+            color: var(--text-primary);
+        }
 
-  .hero button {
-    background-color: var(--primary);
-    border: none;
-    color: var(--text-inverse);
-    padding: 12px 28px;
-    margin: 10px;
-    border-radius: 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+        .hero button {
+            background-color: var(--primary);
+            border: none;
+            color: var(--text-inverse);
+            padding: 12px 28px;
+            margin: 10px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-  .hero button:hover {
-    background-color: var(--primary-hover);
-  }
+        .hero button:hover {
+            background-color: var(--primary-hover);
+        }
 
-  .hero .b2 {
-    background-color: var(--bg-main);
-    color: var(--primary);
-    border: 2px solid var(--primary);
-  }
+        .hero .b2 {
+            background-color: var(--bg-main);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
 
-  /* =========================
-     Pathways Section
-  ========================== */
-  .pathways-row {
-    margin-top: 40px;
-  }
+        /* Pathways Section */
+        .pathways-row {
+            margin-top: 40px;
+        }
 
-  .path-card {
-    background: var(--bg-card);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid var(--border-soft);
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: 0.3s;
-  }
+        .path-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-soft);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: 0.3s;
+        }
 
-  .path-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-  }
+        .path-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
 
-  .icon-box {
-    width: 55px;
-    height: 55px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-  }
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
 
-  .purple {
-    background: var(--accent-purple-soft);
-    color: var(--accent-purple);
-  }
+        .purple {
+            background: var(--accent-purple-soft);
+            color: var(--accent-purple);
+        }
 
-  .green {
-    background: var(--secondary-soft);
-    color: var(--secondary);
-  }
+        .green {
+            background: var(--secondary-soft);
+            color: var(--secondary);
+        }
 
-  .path-card h4 {
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
+        .path-card h4 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
 
-  .path-card p {
-    color: var(--text-secondary);
-    margin-bottom: 20px;
-  }
+        .path-card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
 
-  .primary-btn {
-    background: var(--text-primary);
-    color: var(--text-inverse);
-    padding: 10px 20px;
-    border-radius: 12px;
-  }
+        .primary-btn {
+            background: var(--text-primary);
+            color: var(--text-inverse);
+            padding: 10px 20px;
+            border-radius: 12px;
+        }
 
-  .bg-circle {
-    position: absolute;
-    right: -60px;
-    top: 20px;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    opacity: 0.15;
-  }
+        .bg-circle {
+            position: absolute;
+            right: -60px;
+            top: 20px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
 
-  /* =========================
-     Responsive
-  ========================== */
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.2rem;
-    }
-  }
-</style>
+        /* Responsive*/
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div id="navbar"></div>
+    <div id="navbar"></div>
 
-<script>
-  fetch('/components/navbar.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('navbar').innerHTML = html);
-</script>
-    
+    <script>
+        fetch('/components/navbar.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('navbar').innerHTML = html);
+    </script>
+
 
 
     <!-- Hero Section -->
@@ -259,17 +255,18 @@
             Learning Hub
         </h1>
 
-            <p>
-                EduArchive offers curated academic notes, previous year question papers,
-                placement preparation guides, and video resources tailored for every
-                B.Tech student.
-            </p>
+        <p>
+            EduArchive offers curated academic notes, previous year question papers,
+            placement preparation guides, and video resources tailored for every
+            B.Tech student.
+        </p>
 
-            <button class="b1">Start Learning</button>
+        <a href="resources.html">
+            <button class="b2">Start Learning</button>
             <a href="placement.html">
-    <button class="b2">Placement Prep</button>
-</a>
-        </div>
+                <button class="b2">Placement Prep</button>
+            </a>
+    </div>
 
     <div class="year-section">
         <h2 class="fw-bold text-center">Select Your Academic Year</h2>
@@ -387,13 +384,13 @@
         </div>
     </div>
 
-   <div id="footer"></div>
+    <div id="footer"></div>
 
-<script>
-  fetch('/components/footer.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
-</script>
+    <script>
+        fetch('/components/footer.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
