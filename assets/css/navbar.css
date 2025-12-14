@@ -101,3 +101,64 @@
     object-fit: cover;
     border: 3px solid var(--primary-soft);
   }
+
+
+  /* Hide search on small screens */
+@media (max-width: 767px) {
+  .search-wrapper {
+    display: none;
+  }
+
+  .top-nav {
+    padding: 8px 12px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .contribute-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .nav-dp {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ========== VERY SMALL PHONES ========== */
+@media (max-width: 480px) {
+  .top-nav {
+    gap: 8px;
+  }
+
+  .logo-box {
+    padding: 6px 8px;
+    font-size: 16px;
+  }
+
+  .nav-icon {
+    font-size: 1.2rem;
+  }
+
+  .contribute-btn {
+    display: none; 
+  }
+}
+
+/* ========== TABLET & UP ========== */
+@media (min-width: 768px) {
+  .search-wrapper {
+    display: block;
+  }
+
+  .user-info {
+    display: block;
+  }
+}
