@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>EduArchive</title>
+    <meta name="description" content="This is Ultimate Study Material Hub For All B. Tech Students" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+
+    <style>
+
+
+   body {
+            font-family: "Inter", sans-serif;
+        }
+
+        /* Navbar Container */
+        .top-nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* Logo */
+        .logo-box {
+            background: #5b61ff;
+            padding: 8px 10px;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        /* Search Bar */
+        .search-wrapper {
+            flex: 1;
+            max-width: 550px;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 18px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 40px;
+            border-radius: 12px;
+            font-size: 15px;
+            border: 1px solid #e2e8f0;
+            background: #f8fafc;
+            outline: none;
+        }
+
+        /* Icons */
+        .nav-icon {
+            font-size: 1.3rem;
+            color: #64748b;
+            cursor: pointer;
+        }
+
+        /* Contribute Button */
+        .contribute-btn {
+            background: #ecebff;
+            color: #4b47ff;
+            padding: 8px 18px;
+            border-radius: 12px;
+            border: 1px solid #cfcffe;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* User Info */
+        .user-info {
+            line-height: 1.1;
+            margin-right: 5px;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .user-role {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* Profile Picture */
+        .nav-dp {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #dbeafe;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgb(224 231 255);
+            color: rgb(67 56 202);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .back-btn {
+    display: inline-flex;          
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 16px;             
+    border-radius: 25px;
+    font-size: 14px;               
+    color: white;
+    background-color: transparent; 
+    cursor: pointer;
+    margin: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;    
+}
+
+.back-btn i {
+    font-size: 16px;              
+}
+            .back-btn:hover{
+                background-color: white;
+                color: #051940;
+            }
+
+       
+
+</style>
+
+<body>
+   
+
+    <div id="navbar"></div>
+
+<script>
+  fetch('./components/navbar.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('navbar').innerHTML = html);
+</script>
+    
+
+
+<div id="footer"></div>
+<script>
+  fetch('./components/footer.html')
+    .then(res => res.text())
+    .then(html => document.getElementById('footer').innerHTML = html);
+</script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

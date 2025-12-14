@@ -1,0 +1,139 @@
+<!-- Footer Component -->
+
+<style>
+  /* Footer */
+  .edu-footer {
+    background: #f7f9fc;
+    padding: 60px 80px;
+    border-top: 1px solid #e5e7eb;
+    margin-top: 80px;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .footer-about {
+    max-width: 400px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .brand-icon {
+    background: #5b61ff;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .brand-text {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .footer-about p {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .footer-links h4,
+  .footer-social h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .footer-links a {
+    display: block;
+    margin-bottom: 8px;
+    color: #64748b;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: #1e293b;
+  }
+
+  .social-icons i {
+    font-size: 22px;
+    margin-right: 18px;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .social-icons i:hover {
+    color: #4a5568;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .edu-footer {
+      padding: 40px 20px;
+    }
+
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .brand {
+      justify-content: center;
+    }
+  }
+</style>
+
+<footer class="edu-footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <div class="brand">
+        <i class="bi bi-book-fill brand-icon"></i>
+        <span class="brand-text">EduArchive</span>
+      </div>
+
+      <p>
+        EduArchive is the ultimate academic companion for engineering
+        students. From semester exams to placement interviews, we bridge the
+        gap between classroom learning and industry requirements with
+        curated notes, PYQs, and expert lectures.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="/about.html">About Us</a>
+      <a href="/contribute.html">Contribute</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+
+    <div class="footer-social">
+      <h4>Connect</h4>
+      <div class="social-icons">
+        <i class="bi bi-github"></i>
+        <i class="bi bi-twitter"></i>
+        <i class="bi bi-linkedin"></i>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="footer-bottom">
+    © 2025 EduArchive. Open Source Education.
+  </div>
+</footer>

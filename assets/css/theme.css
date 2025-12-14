@@ -1,0 +1,47 @@
+:root {
+  /* BRAND COLORS */
+  --primary: #0073ff;
+  --primary-hover: #0077ff;
+  --primary-soft: #e0e7ff;
+
+  --secondary: #00a86b;
+  --secondary-soft: #eafff1;
+
+  --accent-purple: #4b3ded;
+  --accent-purple-soft: #edeaff;
+
+  --accent-yellow: #ffb400;
+  --accent-yellow-soft: #fff7e4;
+
+  --accent-red: #ff3d63;
+  --accent-red-soft: #ffe8ee;
+
+
+  /*  BACKGROUNDS */
+  --bg-main: #ffffff;
+  --bg-light: #f8fafc;
+  --bg-section: #f0f8ff;
+  --bg-card: #ffffff;
+  --bg-muted: #f0f2f5;
+
+
+  /*  TEXT COLORS */
+  --text-primary: #0f172a;
+  --text-heading: #333333;
+  --text-secondary: #6b7280;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+
+
+  /*  BORDERS  */
+  --border-light: #e5e7eb;
+  --border-soft: #e2e8f0;
+  --border-card: #e7ecf5;
+  --border-btn: #d9dce3;
+
+
+  /*  SHADOWS  */
+  --shadow-sm: 0px 6px 24px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0px 12px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0px 12px 28px rgba(0, 0, 0, 0.08);
+}

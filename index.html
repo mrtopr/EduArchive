@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>EduArchive</title>
+    <meta name="description" content="This is Ultimate Study Material Hub For All B. Tech Students" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--bg-main);
+            color: var(--text-primary);
+        }
+
+        /*  Hero Section  */
+        .hero {
+            background-color: var(--bg-section);
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: var(--text-heading);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--primary-soft);
+            color: var(--accent-purple);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Main Sections */
+        .main {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .year-section {
+            padding: 60px 20px;
+        }
+
+        .year-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /*  Year Cards */
+        .year-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border-card);
+            text-align: center;
+            transition: 0.25s;
+        }
+
+        .year-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .year-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            font-size: 1.8rem;
+        }
+
+        /* Icon Colors */
+        .purple-bg {
+            background: var(--accent-purple-soft);
+            color: var(--accent-purple);
+        }
+
+        .green-bg {
+            background: var(--secondary-soft);
+            color: var(--secondary);
+        }
+
+        .yellow-bg {
+            background: var(--accent-yellow-soft);
+            color: var(--accent-yellow);
+        }
+
+        .red-bg {
+            background: var(--accent-red-soft);
+            color: var(--accent-red);
+        }
+
+        .year-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .year-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Buttons */
+        .explore-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border-btn);
+            background: var(--bg-main);
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .explore-btn:hover {
+            background: var(--bg-muted);
+            color: var(--text-primary);
+        }
+
+        .hero button {
+            background-color: var(--primary);
+            border: none;
+            color: var(--text-inverse);
+            padding: 12px 28px;
+            margin: 10px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: var(--primary-hover);
+            color: var(--text-inverse);
+        }
+
+        .hero .b2 {
+            background-color: var(--bg-main);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        /* Pathways Section */
+        .pathways-row {
+            margin-top: 40px;
+        }
+
+        .path-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border-soft);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: 0.3s;
+        }
+
+        .path-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .purple {
+            background: var(--accent-purple-soft);
+            color: var(--accent-purple);
+        }
+
+        .green {
+            background: var(--secondary-soft);
+            color: var(--secondary);
+        }
+
+        .path-card h4 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .path-card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .primary-btn {
+            background: var(--text-primary);
+            color: var(--text-inverse);
+            padding: 10px 20px;
+            border-radius: 12px;
+        }
+
+        .bg-circle {
+            position: absolute;
+            right: -60px;
+            top: 20px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            opacity: 0.15;
+        }
+
+        /* Responsive*/
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <script>
+        fetch('./components/navbar.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('navbar').innerHTML = html);
+    </script>
+
+
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="tag">New: 2025 Placement Roadmaps</div>
+        <h1>
+            Your Ultimate B.Tech <br />
+            Learning Hub
+        </h1>
+
+        <p>
+            EduArchive offers curated academic notes, previous year question papers,
+            placement preparation guides, and video resources tailored for every
+            B.Tech student.
+        </p>
+
+        <a href="resources.html">
+            <button class="b2">Start Learning</button>
+            <a href="placement.html">
+                <button class="b2">Placement Prep</button>
+            </a>
+    </div>
+
+    <div class="year-section">
+        <h2 class="fw-bold text-center">Select Your Academic Year</h2>
+        <p class="text-center year-subtitle">
+            Choose your current year to access personalized resources, notes, and
+            study guides tailored to your syllabus.
+        </p>
+
+        <div class="row justify-content-center g-4 mt-4">
+            <!-- 1st Year -->
+            <div class="col-md-3">
+                <div class="year-card">
+                    <div class="year-icon purple-bg">
+                        <i class="bi bi-stars"></i>
+                    </div>
+                    <h4 class="year-title">1st Year</h4>
+                    <p class="year-text">
+                        Foundations of engineering. Core subjects and introductory
+                        concepts.
+                    </p>
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+
+            <!-- 2nd Year -->
+            <div class="col-md-3">
+                <div class="year-card">
+                    <div class="year-icon green-bg">
+                        <i class="bi bi-layers-fill"></i>
+                    </div>
+                    <h4 class="year-title">2nd Year</h4>
+                    <p class="year-text">
+                        Deeper dives into core subjects and specialized areas begin.
+                    </p>
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+
+            <!-- 3rd Year -->
+            <div class="col-md-3">
+                <div class="year-card">
+                    <div class="year-icon yellow-bg">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h4 class="year-title">3rd Year</h4>
+                    <p class="year-text">
+                        Advanced topics, project work, and industry-relevant skills.
+                    </p>
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+
+            <!-- 4th Year -->
+            <div class="col-md-3">
+                <div class="year-card">
+                    <div class="year-icon red-bg">
+                        <i class="bi bi-mortarboard-fill"></i>
+                    </div>
+                    <h4 class="year-title">4th Year</h4>
+                    <p class="year-text">
+                        Capstone projects, electives, and intense placement preparation.
+                    </p>
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <h2 class="fw-bold">Pathways to Success</h2>
+        <p>
+            Two distinct modes designed to help you focus on what matters most right
+            now.
+        </p>
+
+        <div class="row justify-content-center g-4 pathways-row">
+            <!-- Card 1 -->
+            <div class="col-md-5">
+                <div class="path-card">
+                    <div class="icon-box purple">
+                        <i class="bi bi-book fs-3"></i>
+                    </div>
+
+                    <h4>Academic Resources</h4>
+                    <p>
+                        Access comprehensive notes, assignments, and Previous Year
+                        Questions (PYQs) for all your subjects to ace your university
+                        exams.
+                    </p>
+
+                    <button class="btn primary-btn">Explore Subjects</button>
+
+                    <div class="bg-circle purple-bg"></div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-5">
+                <div class="path-card">
+                    <div class="icon-box green">
+                        <i class="bi bi-briefcase fs-3"></i>
+                    </div>
+
+                    <h4>Placement Preparation</h4>
+                    <p>
+                        Master Data Structures, System Design, and Aptitude with curated
+                        roadmaps, LeetCode sheets, and real interview experiences.
+                    </p>
+
+                    <button class="btn primary-btn">Get Job Ready</button>
+
+                    <div class="bg-circle green-bg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+        fetch('./components/footer.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
