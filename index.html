@@ -218,6 +218,12 @@
             padding: 10px 20px;
             border-radius: 12px;
         }
+      .btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: var(--bg-muted);
+    border-color: var(--bs-btn-hover-border-color);
+}
+        
 
         .bg-circle {
             position: absolute;
@@ -234,6 +240,12 @@
             .hero h1 {
                 font-size: 2.2rem;
             }
+        }
+
+        .explore-btn{
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
     </style>
 
@@ -264,11 +276,9 @@
             B.Tech student.
         </p>
 
-        <a href="resources.html">
+        <a href="#pathway">
             <button class="b2">Start Learning</button>
-            <a href="placement.html">
-                <button class="b2">Placement Prep</button>
-            </a>
+        </a>
     </div>
 
     <div class="year-section">
@@ -290,7 +300,7 @@
                         Foundations of engineering. Core subjects and introductory
                         concepts.
                     </p>
-                    <button class="explore-btn">Explore</button>
+                    <a href="resources.html?year=1" class="explore-btn">Explore</a>
                 </div>
             </div>
 
@@ -304,7 +314,7 @@
                     <p class="year-text">
                         Deeper dives into core subjects and specialized areas begin.
                     </p>
-                    <button class="explore-btn">Explore</button>
+                    <a href="resources.html?year=2" class="explore-btn">Explore</a>
                 </div>
             </div>
 
@@ -318,7 +328,7 @@
                     <p class="year-text">
                         Advanced topics, project work, and industry-relevant skills.
                     </p>
-                    <button class="explore-btn">Explore</button>
+                    <a href="resources.html?year=3" class="explore-btn">Explore</a>
                 </div>
             </div>
 
@@ -332,13 +342,13 @@
                     <p class="year-text">
                         Capstone projects, electives, and intense placement preparation.
                     </p>
-                    <button class="explore-btn">Explore</button>
+                    <a href="resources.html?year=4" class="explore-btn">Explore</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="main">
+    <div id="pathway" class="main">
         <h2 class="fw-bold">Pathways to Success</h2>
         <p>
             Two distinct modes designed to help you focus on what matters most right
@@ -360,7 +370,7 @@
                         exams.
                     </p>
 
-                    <button class="btn primary-btn">Explore Subjects</button>
+                    <a href="resources.html" class="btn primary-btn">Explore Subjects</a>
 
                     <div class="bg-circle purple-bg"></div>
                 </div>
@@ -379,7 +389,7 @@
                         roadmaps, LeetCode sheets, and real interview experiences.
                     </p>
 
-                    <button class="btn primary-btn">Get Job Ready</button>
+                    <a href="placement.html" class="btn primary-btn">Get Job Ready</a>
 
                     <div class="bg-circle green-bg"></div>
                 </div>
@@ -399,6 +409,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/theme.js"></script>
       <script src="./assets/js/layout.js"></script>
+
+    <!-- Initialize Search Functionality -->
+    <script type="module">
+        import { initializeSearch } from './assets/js/search.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSearch();
+        });
+    </script>
 </body>
 
 </html>

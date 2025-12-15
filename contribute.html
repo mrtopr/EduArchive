@@ -1,178 +1,116 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>EduArchive</title>
-    <meta name="description" content="This is Ultimate Study Material Hub For All B. Tech Students" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribute | EduArchive</title>
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />   
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/theme.css" />
-        <link rel="stylesheet" href="assets/css/navbar.css" />
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
 
-    <style>
+  <style>
+    .contribute-hero {
+      background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+      color: var(--text-inverse);
+      padding: 90px 20px;
+      text-align: center;
+    }
 
+    .contribute-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
 
-   body {
-            font-family: "Inter", sans-serif;
-        }
+    .contribute-hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
 
-        /* Navbar Container */
-        .top-nav {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-        }
+    .maintenance-box {
+      max-width: 900px;
+      margin: -60px auto 60px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
 
-        /* Logo */
-        .logo-box {
-            background: #5b61ff;
-            padding: 8px 10px;
-            border-radius: 10px;
-            color: white;
-            font-size: 20px;
-        }
+    .maintenance-box i {
+      font-size: 3rem;
+      color: var(--accent-yellow);
+      margin-bottom: 15px;
+    }
 
-        .logo-text {
-            font-size: 22px;
-            font-weight: 600;
-            color: #0f172a;
-        }
+    .maintenance-box h2 {
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
 
-        /* Search Bar */
-        .search-wrapper {
-            flex: 1;
-            max-width: 550px;
-            position: relative;
-        }
+    .maintenance-box p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
 
-        .search-icon {
-            position: absolute;
-            top: 50%;
-            left: 15px;
-            transform: translateY(-50%);
-            color: #94a3b8;
-            font-size: 18px;
-        }
+    .future-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
 
-        .search-input {
-            width: 100%;
-            padding: 12px 40px;
-            border-radius: 12px;
-            font-size: 15px;
-            border: 1px solid #e2e8f0;
-            background: #f8fafc;
-            outline: none;
-        }
+    .feature-card {
+      background: var(--bg-muted);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+    }
 
-        /* Icons */
-        .nav-icon {
-            font-size: 1.3rem;
-            color: #64748b;
-            cursor: pointer;
-        }
+    .feature-card i {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
 
-        /* Contribute Button */
-        .contribute-btn {
-            background: #ecebff;
-            color: #4b47ff;
-            padding: 8px 18px;
-            border-radius: 12px;
-            border: 1px solid #cfcffe;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+    .feature-card h5 {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--text-primary);
+    }
 
-        /* User Info */
-        .user-info {
-            line-height: 1.1;
-            margin-right: 5px;
-        }
+    .feature-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
 
-        .user-name {
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        .user-role {
-            font-size: 12px;
-            color: #94a3b8;
-        }
-
-        /* Profile Picture */
-        .nav-dp {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #dbeafe;
-        }
-
-
-        /* Hero Section */
-        .hero {
-            background-color: #f0f8ff;
-            text-align: center;
-            padding: 120px 20px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #333;
-        }
-
-        .tag {
-            display: inline-block;
-            background-color: rgb(224 231 255);
-            color: rgb(67 56 202);
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .back-btn {
-    display: inline-flex;          
-    align-items: center;
-    gap: 8px;
-
-    padding: 8px 16px;             
-    border-radius: 25px;
-    font-size: 14px;               
-    color: white;
-    background-color: transparent; 
-    cursor: pointer;
-    margin: 15px;
-    text-decoration: none;
-    transition: all 0.3s ease;    
-}
-
-.back-btn i {
-    font-size: 16px;              
-}
-            .back-btn:hover{
-                background-color: white;
-                color: #051940;
-            }
-
-       
-
-</style>
+    @media (max-width: 600px) {
+      .contribute-hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
 
 <body>
-   
 
-<div id="navbar"></div>
+    <!-- Navbar -->
+  <div id="navbar"></div>
 <script>
   fetch('./components/navbar.html')
     .then(res => res.text())
@@ -182,16 +120,73 @@
     });
 </script>
 
-<div id="footer"></div>
-<script>
-  fetch('./components/footer.html')
-    .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
-</script>
+  <!-- Hero -->
+  <section class="contribute-hero">
+    <h1>Contribute to EduArchive</h1>
+    <p>
+      Help thousands of students by sharing notes, PYQs, resources, and insights —
+      all in one structured academic platform.
+    </p>
+  </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/theme.js"></script>
-      <script src="./assets/js/layout.js"></script>
+  <!-- Maintenance Alert -->
+  <section class="maintenance-box">
+    <i class="bi bi-tools"></i>
+    <h2>Feature Under Active Development</h2>
+    <p>
+      We are currently building a secure and structured system that will allow
+      students to directly upload notes, PDFs, links, and resources to EduArchive.
+      <br><br>
+      This feature will go live soon 🚀
+    </p>
+
+    <!-- Future Features -->
+    <div class="future-features">
+      <div class="feature-card">
+        <i class="bi bi-upload"></i>
+        <h5>Direct Uploads</h5>
+        <p>Upload notes, PDFs, and study material directly.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="bi bi-folder-check"></i>
+        <h5>Auto Categorization</h5>
+        <p>Resources sorted by year, branch, subject, and semester.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="bi bi-shield-check"></i>
+        <h5>Quality Review</h5>
+        <p>Community-reviewed content for accuracy and relevance.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="bi bi-people"></i>
+        <h5>Community Driven</h5>
+        <p>Built by students, for students.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+     <script>
+        fetch('./components/footer.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/layout.js"></script>
+    <!-- Initialize Search Functionality -->
+    <script type="module">
+        import { initializeSearch } from './assets/js/search.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSearch();
+        });
+    </script>
 </body>
-
 </html>

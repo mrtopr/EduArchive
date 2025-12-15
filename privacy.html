@@ -164,5 +164,14 @@
     <script src="./assets/js/theme.js"></script>
       <script src="./assets/js/layout.js"></script>
 
+    <!-- Initialize Search Functionality -->
+    <script type="module">
+        import { initializeSearch } from './assets/js/search.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSearch();
+        });
+    </script>
+
 </body>
 </html>

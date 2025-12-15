@@ -70,3 +70,14 @@
   --shadow-md: none;
   --shadow-lg: none;
 }
+
+/* Improve readability for muted and lead text in dark mode */
+[data-theme="dark"] .text-muted {
+  color: var(--text-secondary) !important;
+  opacity: 1 !important;
+}
+
+[data-theme="dark"] .lead.text-muted,
+[data-theme="dark"] .lead {
+  color: var(--text-primary) !important;
+}

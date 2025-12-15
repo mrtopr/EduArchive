@@ -1,251 +1,224 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placement Prep</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Placement Prep | EduArchive</title>
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/theme.css" />
-        <link rel="stylesheet" href="assets/css/navbar.css" />
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="assets/css/theme.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
 
-    <style>
-  /* Base */
-  body {
-    font-family: "Inter", sans-serif;
-    background: var(--bg-light);
-    color: var(--text-primary);
-  }
+  <style>
+    /* Base */
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg-light);
+      color: var(--text-primary);
+    }
 
-  /* Back Button */
-  .back-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 14px;
-    color: var(--text-inverse);
-    background: transparent;
-    cursor: pointer;
-    margin: 15px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
+    /* Back Button */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-size: 14px;
+      color: var(--text-inverse);
+      background: transparent;
+      cursor: pointer;
+      margin: 15px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-  .back-btn:hover {
-    background: var(--bg-main);
-    color: var(--text-primary);
-  }
+    .back-btn:hover {
+      background: var(--bg-main);
+      color: var(--text-primary);
+    }
 
-  /* Placement Header */
-  .placement-head {
-    padding: 20px;
-    height: 30vh;
-    background: var(--text-primary);
-    color: var(--text-inverse);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+    /* Placement Header */
+    .placement-head {
+      padding: 20px;
+      height: 30vh;
+      background: var(--text-primary);
+      color: var(--text-inverse);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-  .placement-head .p-tag {
-    padding: 5px 15px;
-    font-size: 10px;
-    border-radius: 25px;
-    border: 1px solid var(--text-inverse);
-    width: fit-content;
-  }
+    .placement-head .p-tag {
+      padding: 5px 15px;
+      font-size: 10px;
+      border-radius: 25px;
+      border: 1px solid var(--text-inverse);
+      width: fit-content;
+    }
 
-  /* Roadmap Section */
-  .roadmap {
-    padding: 50px;
-    background: var(--bg-light);
-  }
+    /* Roadmap Section */
+    .roadmap {
+      padding: 50px;
+      background: var(--bg-light);
+    }
 
-  .roadmap h1 {
-    margin-bottom: 40px;
-    color: var(--text-primary);
-  }
+    .roadmap h1 {
+      margin-bottom: 40px;
+      color: var(--text-primary);
+    }
 
-  .roadmap-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-  }
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
 
-  /* Step Cards */
-  .step-card {
-    background: var(--bg-card);
-    padding: 25px;
-    border-radius: 20px;
-    border: 1px solid var(--border-soft);
-    box-shadow: var(--shadow-sm);
-  }
+    /* Step Cards */
+    .step-card {
+      background: var(--bg-card);
+      padding: 25px;
+      border-radius: 20px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-sm);
+    }
 
-  .step-badge {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--primary-soft);
-    color: var(--primary);
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-  }
+    .step-badge {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
 
-  .step-title {
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--text-primary);
-  }
+    .step-title {
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: var(--text-primary);
+    }
 
-  .step-list {
-    list-style: none;
-    padding: 0;
-  }
+    .step-list {
+      list-style: none;
+      padding: 0;
+    }
 
-  .step-list li {
-    margin-bottom: 12px;
-    font-size: 15px;
-    color: var(--text-secondary);
-  }
+    .step-list li {
+      margin-bottom: 12px;
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
 
-  .step-list i {
-    color: var(--secondary);
-    margin-right: 8px;
-    font-size: 18px;
-  }
+    .step-list i {
+      color: var(--secondary);
+      margin-right: 8px;
+      font-size: 18px;
+    }
 
-  /* Recommended Resources */
-  .recommended-resources {
-    margin: 20px 0;
-    padding: 20px;
-    background: var(--bg-card);
-    border-radius: 15px;
-    border: 1px solid var(--border-soft);
-  }
+    /* Recommended Resources */
+    .recommended-resources {
+      margin: 20px 0;
+      padding: 20px;
+      background: var(--bg-card);
+      border-radius: 15px;
+      border: 1px solid var(--border-soft);
+    }
 
-  .recommended-resources p {
-    font-size: 16px;
-    color: var(--text-secondary);
-    text-align: center;
-  }
+    .recommended-resources p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
 
-  .recommended-resources button {
-    background: var(--primary);
-    color: var(--text-inverse);
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-  }
+    .recommended-resources button {
+      background: var(--primary);
+      color: var(--text-inverse);
+      margin-top: 10px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
 
-  .recommended-resources button:hover {
-    background: var(--primary-hover);
-  }
-</style>
-
-
+    .recommended-resources button:hover {
+      background: var(--primary-hover);
+    }
+  </style>
 </head>
 
 <body>
 
-   <div id="navbar"></div>
-
-    
-    <!-- Header -->
-    <div class="placement-head">
-         <a href="index.html"><div class="back-btn"><i class="bi bi-arrow-left-circle"> Back to Home</i>  </div></a>
-        <p class="p-tag"><i class="bi bi-suitcase-lg"></i> Placement 2025</p>
-        <h1>Placement Preparation</h1>
-        <p>A structured roadmap to crack your dream company.</p>
-    </div>
-
-
-    <!-- Roadmap Section -->
-    <div class="roadmap">
-        <h1>Preparation Roadmap</h1>
-
-        <div class="roadmap-grid">
-
-            <!-- Card 1 -->
-            <div class="step-card">
-                <div class="step-badge">1</div>
-                <h4 class="step-title">Foundations & Basics</h4>
-                <ul class="step-list">
-                    <li><i class="bi bi-check-circle"></i> Learn a Language (C++/Java/Python)</li>
-                    <li><i class="bi bi-check-circle"></i> Time & Space Complexity</li>
-                    <li><i class="bi bi-check-circle"></i> Basic Math for Coding</li>
-                </ul>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="step-card">
-                <div class="step-badge">2</div>
-                <h4 class="step-title">Data Structures & Algorithms</h4>
-                <ul class="step-list">
-                    <li><i class="bi bi-check-circle"></i> Arrays & Strings</li>
-                    <li><i class="bi bi-check-circle"></i> Linked Lists</li>
-                    <li><i class="bi bi-check-circle"></i> Stacks & Queues</li>
-                    <li><i class="bi bi-check-circle"></i> Trees & Graphs</li>
-                    <li><i class="bi bi-check-circle"></i> Dynamic Programming</li>
-                </ul>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="step-card">
-                <div class="step-badge">3</div>
-                <h4 class="step-title">System Design Basics</h4>
-                <ul class="step-list">
-                    <li><i class="bi bi-check-circle"></i> Load Balancing</li>
-                    <li><i class="bi bi-check-circle"></i> Caching</li>
-                    <li><i class="bi bi-check-circle"></i> Database Sharding</li>
-                    <li><i class="bi bi-check-circle"></i> CAP Theorem</li>
-                </ul>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="step-card">
-                <div class="step-badge">4</div>
-                <h4 class="step-title">Mock Interviews & Behavioral Prep</h4>
-                <ul class="step-list">
-                    <li><i class="bi bi-check-circle"></i> STAR Method</li>
-                    <li><i class="bi bi-check-circle"></i> Peer Mock Interviews</li>
-                    <li><i class="bi bi-check-circle"></i> Resume Building</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <!-- Recommended Section -->
-        <h1 class="resources-hd">Recommended Resources</h1>
-
-        <div class="recommended-resources">
-            <p>
-                We are curating the best lists of questions and tutorials.<br>
-                <button>View LeetCode</button>
-            </p>
-        </div>
-    </div>
-
-<div id="footer"></div>
-    <script>
-  fetch('./components/footer.html')
+  <!-- Navbar -->
+  <div id="navbar"></div>
+<script>
+  fetch('./components/navbar.html')
     .then(res => res.text())
-    .then(html => document.getElementById('footer').innerHTML = html);
+    .then(html => {
+      document.getElementById('navbar').innerHTML = html;
+    
+    });
 </script>
+  
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/js/theme.js"></script>
-      <script src="./assets/js/layout.js"></script>
+  <!-- Header -->
+  <header class="placement-head d-flex flex-column justify-content-center">
+    <div class="container">
+
+      <a href="index.html" class="back-btn mb-3">
+        <i class="bi bi-arrow-left-circle"></i> Back to Home
+      </a>
+
+      <span class="p-tag mb-2">
+        <i class="bi bi-suitcase-lg"></i> Placement 2025
+      </span>
+
+      <h1 class="fw-bold mt-3">Placement Preparation</h1>
+      <p class="opacity-75">A structured roadmap to crack your dream company.</p>
+
+    </div>
+  </header>
+
+    <!-- Maintenance Banner -->
+  <section class="container my-5">
+    <div class="p-4 rounded-4 text-white text-center shadow-lg"
+         style="background: linear-gradient(135deg, var(--primary), var(--accent-purple));">
+      <i class="bi bi-tools display-5 mb-3"></i>
+      <h2 class="fw-bold">Under Active Development</h2>
+      <p class="mb-0">
+        We’re actively building this placement hub.  
+        Please check back soon for curated roadmaps and resources.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+     <script>
+        fetch('./components/footer.html')
+            .then(res => res.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+    </script>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/layout.js"></script>
+
+  <!-- Initialize Search Functionality -->
+  <script type="module">
+      import { initializeSearch } from './assets/js/search.js';
+      
+      document.addEventListener('DOMContentLoaded', () => {
+          initializeSearch();
+      });
+  </script>
 
 </body>
 
